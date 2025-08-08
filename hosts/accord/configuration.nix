@@ -26,6 +26,7 @@
     ../../modules/ghostty.nix
     ../../modules/helix
     ../../modules/vscode.nix
+    ../../modules/ssh.nix
   ];
 
   networking.hostName = "accord"; # Define your hostname.
