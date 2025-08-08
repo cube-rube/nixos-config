@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    floorp
-    firefox
-  ];
-  programs.firefox.enable = true;
+  home-manager.sharedModules = [{
+    programs.floorp = {
+      enable = true;
+      nativeMessagingHosts = with pkgs; [ keepassxc ];
+    };
+  }];
 }

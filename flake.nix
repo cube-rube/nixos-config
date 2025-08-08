@@ -51,6 +51,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.cuberub = ./hosts/accord/home.nix;
+            home-manager.backupFileExtension = "bak";
           }
           nix-index-database.nixosModules.nix-index
           { programs.nix-index-database.comma.enable = true; }
