@@ -27,6 +27,7 @@
     ../../modules/helix
     ../../modules/vscode.nix
     ../../modules/ssh.nix
+    ../../modules/shell
   ];
 
   networking.hostName = "accord"; # Define your hostname.
