@@ -11,6 +11,7 @@
     fd
 
     aseprite
+    qbittorrent-enhanced
   ];
 
   # home-manager.sharedModules = [{
