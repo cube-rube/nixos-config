@@ -9,6 +9,8 @@
 
     pciutils
     fd
+
+    aseprite
   ];
 
   # home-manager.sharedModules = [{
