@@ -57,5 +57,22 @@
           { programs.nix-index-database.comma.enable = true; }
         ];
       };
+      nixosConfigurations.nixrock = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs // {
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/nixrock/configuration.nix
+          determinate.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cuberub = ./hosts/nixrock/home.nix;
+            home-manager.backupFileExtension = "bak";
+          }
+        ];
+      };
     };
 }

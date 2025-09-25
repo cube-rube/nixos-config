@@ -5,6 +5,7 @@
     packwiz
     ferium
     modrinth-app
+    r2modman
 
     itch
     the-powder-toy

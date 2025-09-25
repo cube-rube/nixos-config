@@ -6,6 +6,7 @@
     lolcat
     terminaltexteffects
     fastfetch
+    git
 
     pciutils
     fd
