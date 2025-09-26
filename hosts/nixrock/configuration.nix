@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./boot.nix
+      ./kernel.nix
       ./nvidia.nix
       ./syncthing.nix
 

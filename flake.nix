@@ -14,6 +14,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix";
@@ -27,6 +28,7 @@
       self,
       nixpkgs,
       determinate,
+      chaotic,
       home-manager,
       agenix,
       nix-index-database,
@@ -72,6 +74,7 @@
             home-manager.users.cuberub = ./hosts/nixrock/home.nix;
             home-manager.backupFileExtension = "bak";
           }
+          chaotic.nixosModules.default
         ];
       };
     };
