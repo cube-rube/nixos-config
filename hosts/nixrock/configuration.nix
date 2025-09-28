@@ -12,6 +12,7 @@
       ./kernel.nix
       ./nvidia.nix
       ./syncthing.nix
+      ./wireguard.nix
 
       ../../modules/network.nix
       ../../modules/social.nix
