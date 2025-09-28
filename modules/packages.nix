@@ -15,6 +15,7 @@
 
     aseprite
     qbittorrent-enhanced
+    obsidian
   ];
 
   # home-manager.sharedModules = [{
