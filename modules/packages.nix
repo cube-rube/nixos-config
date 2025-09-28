@@ -7,8 +7,14 @@
     terminaltexteffects
     fastfetch
     
+    eza
+    tokei
+    yazi
+    bc
+   
     lazygit
     git
+    gh
 
     pciutils
     fd
