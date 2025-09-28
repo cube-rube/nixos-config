@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ telegram-desktop ];
+  environment.systemPackages = with pkgs; [ ayugram-desktop ];
   home-manager.sharedModules = [
     {
       programs.vesktop = {
