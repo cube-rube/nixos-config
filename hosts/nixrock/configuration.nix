@@ -29,6 +29,7 @@
       ../../modules/vscode.nix
       ../../modules/ssh.nix
       ../../modules/shell
+      ../../modules/office.nix
     ];
 
   networking.hostName = "nixrock"; # Define your hostname.
