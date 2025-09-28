@@ -6,6 +6,8 @@
     lolcat
     terminaltexteffects
     fastfetch
+    
+    lazygit
     git
 
     pciutils
