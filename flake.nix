@@ -74,6 +74,8 @@
             home-manager.users.cuberub = ./hosts/nixrock/home.nix;
             home-manager.backupFileExtension = "bak";
           }
+          nix-index-database.nixosModules.nix-index
+          { programs.nix-index-database.comma.enable = true; }
           chaotic.nixosModules.default
         ];
       };
