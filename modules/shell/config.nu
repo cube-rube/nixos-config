@@ -62,7 +62,7 @@ export def main [] {
         shape_glob_interpolation: { fg: '#7dcfff' attr: 'b' }
         shape_globpattern: { fg: '#7dcfff' attr: 'b' }
         shape_int: { fg: '#bb9af7' attr: 'b' }
-        shape_internalcall: { fg: '#7dcfff' attr: 'b' }
+        shape_internalcall: { fg: '#9ece6a' attr: 'b' }
         shape_keyword: { fg: '#bb9af7' attr: 'b' }
         shape_list: { fg: '#7dcfff' attr: 'b' }
         shape_literal: '#7aa2f7'
