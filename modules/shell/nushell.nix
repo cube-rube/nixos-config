@@ -5,11 +5,18 @@ in {
     pkgs.nushell
   ];
 
+  # environment.systemPackages = [
+  #   pkgs.fish
+  #   pkgs.zsh
+  #   pkgs.inshellisense
+  # ];
+
   programs.bash.interactiveShellInit = /* bash */ ''
       if ! [ "$TERM" = "dumb" ]; then
         exec nu
       fi
     '';
+
   home-manager.sharedModules = [{
     programs.nushell = {
       enable = true;
@@ -19,10 +26,10 @@ in {
         '';
     };
 
-    programs.carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
+    # programs.carapace = {
+    #   enable = true;
+    #   enableNushellIntegration = true;
+    # };
 
     programs.starship = {
       enable = true;
