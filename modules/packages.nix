@@ -22,6 +22,10 @@
     aseprite
     qbittorrent-enhanced
     obsidian
+
+    gcc
+    clang
+    clang-tools    
   ];
 
   # home-manager.sharedModules = [{
