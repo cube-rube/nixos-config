@@ -11,6 +11,7 @@
     tokei
     yazi
     bc
+    bat
    
     lazygit
     git
