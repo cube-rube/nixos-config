@@ -23,9 +23,11 @@
     qbittorrent-enhanced
     obsidian
 
+    # C/C++
     gcc
     clang
     clang-tools    
+    gnumake
   ];
 
   # home-manager.sharedModules = [{
