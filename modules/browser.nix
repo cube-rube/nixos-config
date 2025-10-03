@@ -6,5 +6,10 @@
       enable = true;
       nativeMessagingHosts = with pkgs; [ keepassxc ];
     };
+
+    programs.chromium = {
+      enable = true;
+      package = pkgs.ungoogled-chromium;
+    };
   }];
 }
