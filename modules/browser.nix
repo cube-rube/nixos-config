@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ firefox ];
+  environment.systemPackages = with pkgs; [ firefox google-chrome ];
   home-manager.sharedModules = [{
     programs.floorp = {
       enable = true;
