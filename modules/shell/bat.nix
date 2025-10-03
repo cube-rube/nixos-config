@@ -1,7 +1,12 @@
 { config, pkgs, ... }: {
+  environment.shellAliases = {
+    man = "batman";
+  };
   home-manager.sharedModules = [{
     programs.bat = {
       enable = true;
+      extraPackages = with pkgs.bat-extras; [ batman ];
+
       themes = {
         tokyo-night = {
           src = pkgs.fetchFromGitHub {
@@ -13,6 +18,7 @@
           file = "extras/sublime/tokyonight_night.tmTheme";
         };
       };
+
       config = {
         theme = "tokyo-night";
       };
