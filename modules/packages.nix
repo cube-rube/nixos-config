@@ -28,6 +28,10 @@
     clang
     clang-tools    
     gnumake
+
+    # Python
+    python3
+    uv
   ];
 
   # home-manager.sharedModules = [{
