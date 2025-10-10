@@ -7,7 +7,6 @@
     terminaltexteffects
     fastfetch
     
-    eza
     tokei
     yazi
     bc
