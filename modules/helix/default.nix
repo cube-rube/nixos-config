@@ -41,6 +41,10 @@
             auto-format = true;
             language-servers = [ "autotools-language-server" ];
           }
+          {
+            name = "c";
+            indent = { tab-width = 4; unit = "    "; };
+          }
         ];
       };
     };
