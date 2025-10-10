@@ -11,11 +11,11 @@ in {
   #   pkgs.inshellisense
   # ];
 
-  programs.bash.interactiveShellInit = /* bash */ ''
-      if ! [ "$TERM" = "dumb" ]; then
-        exec nu
-      fi
-    '';
+  # programs.bash.interactiveShellInit = /* bash */ ''
+  #     if ! [ "$TERM" = "dumb" ]; then
+  #       exec nu
+  #     fi
+  #   '';
 
   home-manager.sharedModules = [{
     programs.nushell = {
