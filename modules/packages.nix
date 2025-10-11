@@ -21,6 +21,7 @@
     aseprite
     qbittorrent-enhanced
     obsidian
+    cables
 
     # C/C++
     gcc
