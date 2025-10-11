@@ -6,7 +6,7 @@
     ferium
     modrinth-app
     r2modman
-
+    lumafly
     itch
     the-powder-toy
   ];
