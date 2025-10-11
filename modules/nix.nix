@@ -7,12 +7,6 @@
 {
   nix.settings = (import <| self + /flake.nix).nixConfig;
 
-  home-manager.sharedModules = [
-    {
-      programs.nix-index.enable = true;
-    }
-  ];
-
   programs.nh = {
     enable = true;
     clean.enable = true;
