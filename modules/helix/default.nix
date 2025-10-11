@@ -3,6 +3,8 @@
   environment.variables.EDITOR = "hx";
   environment.systemPackages = with pkgs; [
     autotools-language-server
+    ty
+    ruff
   ];
 
   home-manager.sharedModules = [{
