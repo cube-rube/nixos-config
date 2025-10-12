@@ -2,9 +2,15 @@
 {
   environment.variables.EDITOR = "hx";
   environment.systemPackages = with pkgs; [
+    # make
     autotools-language-server
+
+    # python
     ty
     ruff
+
+    # typst
+    tinymist
   ];
 
   home-manager.sharedModules = [{

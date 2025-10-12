@@ -9,5 +9,7 @@ in {
   environment.systemPackages = with pkgs; [
     libreoffice-fresh
     tex
+
+    typst
   ];
 }
