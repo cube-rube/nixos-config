@@ -18,7 +18,7 @@
     pciutils
     fd
 
-    aseprite
+    # aseprite
     qbittorrent-enhanced
     obsidian
     cables
