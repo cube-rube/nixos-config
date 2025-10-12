@@ -13,6 +13,7 @@
       ./nvidia.nix
       ./syncthing.nix
       ./wireguard.nix
+      ./printing.nix
 
       ../../modules/network.nix
       ../../modules/social.nix
