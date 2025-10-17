@@ -1,5 +1,6 @@
 {
   imports = [
+    ./aliases.nix
     ./nushell.nix
     ./bat.nix
     ./eza.nix
