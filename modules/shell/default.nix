@@ -6,6 +6,7 @@
     ./eza.nix
     ./starship.nix
     ./carapace.nix
+    ./zoxide.nix
   ];
 
   home-manager.sharedModules = [{
