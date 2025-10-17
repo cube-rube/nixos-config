@@ -34,6 +34,9 @@ in {
     tex
     typst
 
+    # asm
+    fasm
+
     # C/C++
     gcc
     clang
