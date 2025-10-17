@@ -24,6 +24,7 @@ in {
 
     pciutils
     fd
+    just
 
     # aseprite
     krita
