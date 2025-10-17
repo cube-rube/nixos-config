@@ -31,7 +31,6 @@
       ../../modules/ssh.nix
       ../../modules/shell
       ../../modules/manpages.nix
-      ../../modules/office.nix
       ../../modules/ides.nix
     ];
 

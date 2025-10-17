@@ -1,5 +1,12 @@
 { pkgs, ... }:
-{
+let
+  tex = (pkgs.texlive.combine {
+      inherit (pkgs.texlive) scheme-full
+      dvisvgm dvipng # for preview and export as html
+      wrapfig amsmath ulem hyperref capt-of
+      xelatex-dev;
+  });
+in {
   environment.systemPackages = with pkgs; [
     asciinema
     cowsay
@@ -19,9 +26,13 @@
     fd
 
     # aseprite
+    krita
     qbittorrent-enhanced
     obsidian
     cables
+    libreoffice-fresh
+    tex
+    typst
 
     # C/C++
     gcc
