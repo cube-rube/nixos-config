@@ -47,6 +47,10 @@ in {
     # Python
     python3
     uv
+
+    # Web stuff
+    deno
+    gleam
   ];
 
   # home-manager.sharedModules = [{
