@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.variables.EDITOR = "hx";
   environment.systemPackages = with pkgs; [

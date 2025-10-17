@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{
   home-manager.sharedModules = [{
     programs.starship = {
       enable = true;

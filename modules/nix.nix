@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  ...
-}:
-{
+{ self, pkgs, ... }: {
   nix.settings = (import <| self + /flake.nix).nixConfig;
 
   programs.nh = {
