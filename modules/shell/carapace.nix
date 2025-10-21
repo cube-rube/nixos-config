@@ -5,8 +5,13 @@
     zsh
     inshellisense
   ];
+
+  environment.sessionVariables.CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense";
   
   home-manager.sharedModules = [{
-    programs.carapace.enable = true;
+    programs.carapace = {
+      enable = true;
+      enableBashIntegration = true;
+    };
   }];
 }
