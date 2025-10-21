@@ -32,6 +32,7 @@
       ../../modules/shell
       ../../modules/manpages.nix
       ../../modules/ides.nix
+      ../../modules/jujutsu.nix
     ];
 
   networking.hostName = "nixrock"; # Define your hostname.
