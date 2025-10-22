@@ -5,14 +5,26 @@
   ];
   home-manager.sharedModules = [
     (homeArgs: let
-      homeConfig = homeArgs.config;
+      jjConfig = homeArgs.config.programs.jujutsu.settings;
     in {
       programs.git = {
         enable = true;
-        settings = homeConfig.programs.jujutsu.settings // {
+        settings = {
+          inherit (jjConfig) user;
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
+          merge.conflictStyle = "zdiff3";
         };
       };
+
+      programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+        options = {
+          navigate = true;
+          hyperlinks = true;
+        };
+      };
+
     })
   ];
 }
