@@ -32,6 +32,7 @@
       ../../modules/shell
       ../../modules/manpages.nix
       ../../modules/ides.nix
+      ../../modules/git.nix
       ../../modules/jujutsu.nix
     ];
 

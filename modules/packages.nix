@@ -18,10 +18,6 @@ in {
     yazi
     bc
    
-    lazygit
-    git
-    gh
-
     pciutils
     fd
     dust
