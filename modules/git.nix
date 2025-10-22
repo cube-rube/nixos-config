@@ -9,9 +9,7 @@
     in {
       programs.git = {
         enable = true;
-        userName  = homeConfig.programs.jujutsu.settings.user.name;
-        userEmail = homeConfig.programs.jujutsu.settings.user.email;
-        extraConfig = {
+        settings = homeConfig.programs.jujutsu.settings // {
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
         };
       };
