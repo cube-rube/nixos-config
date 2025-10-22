@@ -7,6 +7,7 @@
     ./starship.nix
     ./carapace.nix
     ./zoxide.nix
+    ./zsh.nix
   ];
 
   home-manager.sharedModules = [{
