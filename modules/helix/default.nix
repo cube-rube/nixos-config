@@ -17,6 +17,7 @@
 
     # nix
     pkgs.nixd
+    pkgs.alejandra
   ];
 
   home-manager.sharedModules = [{

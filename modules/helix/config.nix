@@ -19,6 +19,11 @@
       indent = { tab-width = 4; unit = "    "; };
     }
     {
+      name = "nix";
+      auto-format = false;
+      formatter.command = "alejandra";
+    }
+    {
       name = "fasm";
       scope = "source.fasm";
       file-types = ["fasm"];
