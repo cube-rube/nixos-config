@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ firefox google-chrome ];
+  environment.systemPackages = [ pkgs.firefox pkgs.google-chrome ];
   home-manager.sharedModules = [{
     programs.floorp = {
       enable = true;
-      nativeMessagingHosts = with pkgs; [ keepassxc ];
+      nativeMessagingHosts = [ pkgs.keepassxc ];
     };
   }];
 }

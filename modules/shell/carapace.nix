@@ -1,9 +1,9 @@
 { pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    fish
-    zsh
-    inshellisense
+  environment.systemPackages = [
+    pkgs.fish
+    pkgs.zsh
+    pkgs.inshellisense
   ];
 
   environment.sessionVariables.CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense";

@@ -83,9 +83,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    nixfmt-rfc-style
+  environment.systemPackages = [
+    pkgs.git
+    pkgs.nixfmt-rfc-style
   ];
 
   # Nix options

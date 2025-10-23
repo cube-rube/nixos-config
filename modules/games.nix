@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    prismlauncher
-    packwiz
-    ferium
-    modrinth-app
-    r2modman
-    lumafly
-    itch
-    the-powder-toy
+  environment.systemPackages = [
+    pkgs.prismlauncher
+    pkgs.packwiz
+    pkgs.ferium
+    pkgs.modrinth-app
+    pkgs.r2modman
+    pkgs.lumafly
+    pkgs.itch
+    pkgs.the-powder-toy
   ];
   programs.steam.enable = true;
 }

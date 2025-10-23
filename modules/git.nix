@@ -1,7 +1,6 @@
 { pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    lazygit
-    gh
+  environment.systemPackages = [
+    pkgs.gh
   ];
   home-manager.sharedModules = [
     (homeArgs: let

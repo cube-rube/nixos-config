@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
-  environment.systemPackages = with pkgs; [
-    reaction
+  environment.systemPackages = [
+    pkgs.reaction
   ];
   networking.firewall = {
    # if packets are still dropped, they will show up in dmesg

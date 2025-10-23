@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ ayugram-desktop ];
+  environment.systemPackages = [ pkgs.ayugram-desktop ];
   home-manager.sharedModules = [
     {
       programs.vesktop = {

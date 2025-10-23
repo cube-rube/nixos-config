@@ -1,19 +1,19 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    libva-utils
-    vdpauinfo
-    vulkan-tools
-    vulkan-validation-layers
-    libvdpau-va-gl
-    egl-wayland
-    wgpu-utils
-    mesa
-    libglvnd
-    nvtopPackages.nvidia
-    nvtopPackages.intel
-    nvitop
-    libGL
+  environment.systemPackages = [
+    pkgs.libva-utils
+    pkgs.vdpauinfo
+    pkgs.vulkan-tools
+    pkgs.vulkan-validation-layers
+    pkgs.libvdpau-va-gl
+    pkgs.egl-wayland
+    pkgs.wgpu-utils
+    pkgs.mesa
+    pkgs.libglvnd
+    pkgs.nvtopPackages.nvidia
+    pkgs.nvtopPackages.intel
+    pkgs.nvitop
+    pkgs.libGL
   ];
 
   nixpkgs.config.nvidia.acceptLicense = true;

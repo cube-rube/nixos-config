@@ -7,47 +7,48 @@ let
       xelatex-dev;
   });
 in {
-  environment.systemPackages = with pkgs; [
-    asciinema
-    cowsay
-    lolcat
-    terminaltexteffects
-    fastfetch
-    
-    tokei
-    yazi
-    bc
+  environment.systemPackages = [
+    pkgs.asciinema
+    pkgs.cowsay
+    pkgs.lolcat
+    pkgs.terminaltexteffects
+    pkgs.fastfetch
+
+    pkgs.tokei
+    pkgs.yazi
+    pkgs.bc
    
-    pciutils
-    fd
-    dust
-    just
+    pkgs.pciutils
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.dust
+    pkgs.just
 
     # aseprite
-    krita
-    qbittorrent-enhanced
-    obsidian
-    cables
-    libreoffice-fresh
+    pkgs.krita
+    pkgs.qbittorrent-enhanced
+    pkgs.obsidian
+    pkgs.cables
+    pkgs.libreoffice-fresh
     tex
-    typst
+    pkgs.typst
 
     # asm
-    fasm
+    pkgs.fasm
 
     # C/C++
-    gcc
-    clang
-    clang-tools    
-    gnumake
+    pkgs.gcc
+    pkgs.clang
+    pkgs.clang-tools    
+    pkgs.gnumake
 
     # Python
-    python3
-    uv
+    pkgs.python3
+    pkgs.uv
 
     # Web stuff
-    deno
-    gleam
+    pkgs.deno
+    pkgs.gleam
   ];
 
   # home-manager.sharedModules = [{

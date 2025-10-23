@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    jetbrains.pycharm-community
+  environment.systemPackages = [
+    pkgs.jetbrains.pycharm-community
   ];
 }

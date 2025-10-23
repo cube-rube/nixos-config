@@ -1,19 +1,22 @@
 { pkgs, ... }:
 {
   environment.variables.EDITOR = "hx";
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     # make
-    autotools-language-server
+    pkgs.autotools-language-server
 
     # python
-    ty
-    ruff
+    pkgs.ty
+    pkgs.ruff
 
     # typst
-    tinymist
+    pkgs.tinymist
 
     # asm
-    asm-lsp
+    pkgs.asm-lsp
+
+    # nix
+    pkgs.nixd
   ];
 
   home-manager.sharedModules = [{

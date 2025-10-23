@@ -5,7 +5,7 @@
   home-manager.sharedModules = [{
     programs.bat = {
       enable = true;
-      extraPackages = with pkgs.bat-extras; [ batman ];
+      extraPackages = [ pkgs.bat-extras.batman ];
 
       themes = {
         tokyo-night = {

@@ -1,145 +1,145 @@
 { pkgs, ... }:
 {
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld.libraries = [
       # List by default
-      zlib
-      zstd
-      stdenv.cc.cc
-      stdenv.cc.cc.lib
-      curl
-      openssl
-      attr
-      libssh
-      bzip2
-      libxml2
-      acl
-      libsodium
-      util-linux
-      xz
-      systemd
-      
+      pkgs.zlib
+      pkgs.zstd
+      pkgs.stdenv.cc.cc
+      pkgs.stdenv.cc.cc.lib
+      pkgs.curl
+      pkgs.openssl
+      pkgs.attr
+      pkgs.libssh
+      pkgs.bzip2
+      pkgs.libxml2
+      pkgs.acl
+      pkgs.libsodium
+      pkgs.util-linux
+      pkgs.xz
+      pkgs.systemd
+
       # My own additions
-      xorg.libXcomposite
-      xorg.libXtst
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libX11
-      xorg.libXfixes
-      libGL
-      libva
-      pipewire
-      xorg.libxcb
-      xorg.libXdamage
-      xorg.libxshmfence
-      xorg.libXxf86vm
-      libelf
+      pkgs.xorg.libXcomposite
+      pkgs.xorg.libXtst
+      pkgs.xorg.libXrandr
+      pkgs.xorg.libXext
+      pkgs.xorg.libX11
+      pkgs.xorg.libXfixes
+      pkgs.libGL
+      pkgs.libva
+      pkgs.pipewire
+      pkgs.xorg.libxcb
+      pkgs.xorg.libXdamage
+      pkgs.xorg.libxshmfence
+      pkgs.xorg.libXxf86vm
+      pkgs.libelf
 
       # Required
-      glib
-      gtk2
+      pkgs.glib
+      pkgs.gtk2
 
       # Inspired by steam
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/st/steam/package.nix#L36-L85
-      networkmanager      
-      vulkan-loader
-      libgbm
-      libdrm
-      libxcrypt
-      coreutils
-      pciutils
-      zenity
+      pkgs.networkmanager      
+      pkgs.vulkan-loader
+      pkgs.libgbm
+      pkgs.libdrm
+      pkgs.libxcrypt
+      pkgs.coreutils
+      pkgs.pciutils
+      pkgs.zenity
       # glibc_multi.bin # Seems to cause issue in ARM
-      
-      # # Without these it silently fails
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXrender
-      xorg.libXScrnSaver
-      xorg.libXi
-      xorg.libSM
-      xorg.libICE
-      gnome2.GConf
-      nspr
-      nss
-      cups
-      libcap
-      SDL2
-      libusb1
-      dbus-glib
-      ffmpeg
+
+      # Without these it silently fails
+      pkgs.xorg.libXinerama
+      pkgs.xorg.libXcursor
+      pkgs.xorg.libXrender
+      pkgs.xorg.libXScrnSaver
+      pkgs.xorg.libXi
+      pkgs.xorg.libSM
+      pkgs.xorg.libICE
+      pkgs.gnome2.GConf
+      pkgs.nspr
+      pkgs.nss
+      pkgs.cups
+      pkgs.libcap
+      pkgs.SDL2
+      pkgs.libusb1
+      pkgs.dbus-glib
+      pkgs.ffmpeg
       # Only libraries are needed from those two
-      libudev0-shim
-      
+      pkgs.libudev0-shim
+
       # needed to run unity
-      gtk3
-      icu
-      libnotify
-      gsettings-desktop-schemas
+      pkgs.gtk3
+      pkgs.icu
+      pkgs.libnotify
+      pkgs.gsettings-desktop-schemas
       # https://github.com/NixOS/nixpkgs/issues/72282
       # https://github.com/NixOS/nixpkgs/blob/2e87260fafdd3d18aa1719246fd704b35e55b0f2/pkgs/applications/misc/joplin-desktop/default.nix#L16
       # log in /home/leo/.config/unity3d/Editor.log
       # it will segfault when opening files if you don’t do:
       # export XDG_DATA_DIRS=/nix/store/0nfsywbk0qml4faa7sk3sdfmbd85b7ra-gsettings-desktop-schemas-43.0/share/gsettings-schemas/gsettings-desktop-schemas-43.0:/nix/store/rkscn1raa3x850zq7jp9q3j5ghcf6zi2-gtk+3-3.24.35/share/gsettings-schemas/gtk+3-3.24.35/:$XDG_DATA_DIRS
       # other issue: (Unity:377230): GLib-GIO-CRITICAL **: 21:09:04.706: g_dbus_proxy_call_sync_internal: assertion 'G_IS_DBUS_PROXY (proxy)' failed
-      
+
       # Verified games requirements
-      xorg.libXt
-      xorg.libXmu
-      libogg
-      libvorbis
-      SDL
-      SDL2_image
-      glew110
-      libidn
-      tbb
-      
+      pkgs.xorg.libXt
+      pkgs.xorg.libXmu
+      pkgs.libogg
+      pkgs.libvorbis
+      pkgs.SDL
+      pkgs.SDL2_image
+      pkgs.glew110
+      pkgs.libidn
+      pkgs.tbb
+
       # Other things from runtime
-      flac
-      freeglut
-      libjpeg
-      libpng
-      libpng12
-      libsamplerate
-      libmikmod
-      libtheora
-      libtiff
-      pixman
-      speex
-      SDL_image
-      SDL_ttf
-      SDL_mixer
-      SDL2_ttf
-      SDL2_mixer
-      libappindicator-gtk2
-      libdbusmenu-gtk2
-      libindicator-gtk2
-      libcaca
-      libcanberra
-      libgcrypt
-      libvpx
-      librsvg
-      xorg.libXft
-      libvdpau
+      pkgs.flac
+      pkgs.freeglut
+      pkgs.libjpeg
+      pkgs.libpng
+      pkgs.libpng12
+      pkgs.libsamplerate
+      pkgs.libmikmod
+      pkgs.libtheora
+      pkgs.libtiff
+      pkgs.pixman
+      pkgs.speex
+      pkgs.SDL_image
+      pkgs.SDL_ttf
+      pkgs.SDL_mixer
+      pkgs.SDL2_ttf
+      pkgs.SDL2_mixer
+      pkgs.libappindicator-gtk2
+      pkgs.libdbusmenu-gtk2
+      pkgs.libindicator-gtk2
+      pkgs.libcaca
+      pkgs.libcanberra
+      pkgs.libgcrypt
+      pkgs.libvpx
+      pkgs.librsvg
+      pkgs.xorg.libXft
+      pkgs.libvdpau
       # ...
       # Some more libraries that I needed to run programs
-      pango
-      cairo
-      atk
-      gdk-pixbuf
-      fontconfig
-      freetype
-      dbus
-      alsa-lib
-      expat
+      pkgs.pango
+      pkgs.cairo
+      pkgs.atk
+      pkgs.gdk-pixbuf
+      pkgs.fontconfig
+      pkgs.freetype
+      pkgs.dbus
+      pkgs.alsa-lib
+      pkgs.expat
       # for blender
-      libxkbcommon
+      pkgs.libxkbcommon
 
-      libxcrypt-legacy # For natron
-      libGLU # For natron
+      pkgs.libxcrypt-legacy # For natron
+      pkgs.libGLU # For natron
 
       # Appimages need fuse, e.g. https://musescore.org/fr/download/musescore-x86_64.AppImage
-      fuse
-      e2fsprogs
+      pkgs.fuse
+      pkgs.e2fsprogs
   ];
 }

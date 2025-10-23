@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
   ];
   services.flatpak.enable = true;
 }
