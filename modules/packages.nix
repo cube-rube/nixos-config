@@ -24,10 +24,11 @@ in {
     pkgs.dust
     pkgs.just
 
-    # aseprite
+    # pgks.aseprite
     pkgs.krita
     pkgs.qbittorrent-enhanced
     pkgs.obsidian
+    pkgs.kdePackages.kcalc
     pkgs.cables
     pkgs.libreoffice-fresh
     tex
