@@ -1,6 +1,7 @@
 { pkgs, ...}: {
   environment.systemPackages = [
     pkgs.gh
+    pkgs.git-filter-repo
   ];
   home-manager.sharedModules = [
     (homeArgs: let
