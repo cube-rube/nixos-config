@@ -28,7 +28,7 @@
       ../../modules/ghostty.nix
       ../../modules/helix
       ../../modules/vscode.nix
-      ../../modules/ssh.nix
+      ../../modules/ssh/ssh-client.nix
       ../../modules/shell
       ../../modules/manpages.nix
       ../../modules/ides.nix
