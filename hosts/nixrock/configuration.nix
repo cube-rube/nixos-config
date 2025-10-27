@@ -11,7 +11,7 @@
       ./boot.nix
       ./kernel.nix
       ./nvidia.nix
-      ./syncthing.nix
+      ./syncthing
       ./wireguard.nix
       ./printing.nix
 
@@ -25,10 +25,12 @@
       ../../modules/wine.nix
       ../../modules/fhs.nix
       ../../modules/nix.nix
+      ../../modules/agenix.nix
       ../../modules/ghostty.nix
       ../../modules/helix
       ../../modules/vscode.nix
       ../../modules/ssh/ssh-client.nix
+      ../../modules/ssh/ssh-server.nix
       ../../modules/shell
       ../../modules/manpages.nix
       ../../modules/ides.nix

@@ -25,7 +25,7 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
 
     nix-index-database = {
@@ -34,66 +34,71 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      determinate,
-      chaotic,
-      home-manager,
-      agenix,
-      zapret-discord-youtube,
-      nix-index-database,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations.accord = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs // {
+  outputs = {
+    self,
+    nixpkgs,
+    determinate,
+    chaotic,
+    home-manager,
+    agenix,
+    zapret-discord-youtube,
+    nix-index-database,
+    ...
+  } @ inputs: {
+    nixosConfigurations.accord = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs =
+        inputs
+        // {
           inherit inputs;
         };
-        modules = [
-          ./hosts/accord/configuration.nix
-          determinate.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.cuberub = ./hosts/accord/home.nix;
-            home-manager.backupFileExtension = "bak";
-          }
-          nix-index-database.nixosModules.nix-index
-          { programs.nix-index-database.comma.enable = true; }
-        ];
-      };
-      nixosConfigurations.nixrock = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs // {
-          inherit inputs;
-        };
-        modules = [
-          ./hosts/nixrock/configuration.nix
-          determinate.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.cuberub = ./hosts/nixrock/home.nix;
-            home-manager.backupFileExtension = "bak";
-          }
-          agenix.nixosModules.default
-          nix-index-database.nixosModules.nix-index
-          { programs.nix-index-database.comma.enable = true; }
-          chaotic.nixosModules.default
-          
-          zapret-discord-youtube.nixosModules.default
-          {
-            services.zapret-discord-youtube = {
-              enable = true;
-              config = "general (FAKE_TLS_AUTO_ALT2)";
-            };
-          }
-        ];
-      };
+      modules = [
+        ./hosts/accord/configuration.nix
+        determinate.nixosModules.default
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cuberub = ./hosts/accord/home.nix;
+          home-manager.backupFileExtension = "bak";
+        }
+        nix-index-database.nixosModules.nix-index
+        {programs.nix-index-database.comma.enable = true;}
+      ];
     };
+    nixosConfigurations.nixrock = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs =
+        inputs
+        // {
+          inherit inputs;
+        };
+      modules = [
+        ./hosts/nixrock/configuration.nix
+        determinate.nixosModules.default
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cuberub = ./hosts/nixrock/home.nix;
+          home-manager.backupFileExtension = "bak";
+        }
+
+        agenix.nixosModules.default
+
+        nix-index-database.nixosModules.nix-index
+        {programs.nix-index-database.comma.enable = true;}
+
+        chaotic.nixosModules.default
+
+        zapret-discord-youtube.nixosModules.default
+        {
+          services.zapret-discord-youtube = {
+            enable = true;
+            config = "general (FAKE_TLS_AUTO_ALT2)";
+          };
+        }
+      ];
+    };
+  };
 }

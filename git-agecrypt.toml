@@ -1,0 +1,3 @@
+[config]
+"hosts/nixrock/syncthing/folders.sct.nix" = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoT3MsbrFPrp2q71+aKPqDQZCDpw3mSIRL8yIudx0gx cuberub@nixrock"]
+"hosts/nixrock/syncthing/devices.sct.nix" = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoT3MsbrFPrp2q71+aKPqDQZCDpw3mSIRL8yIudx0gx cuberub@nixrock"]

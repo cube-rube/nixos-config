@@ -2,6 +2,7 @@
   environment.systemPackages = [
     pkgs.gh
     pkgs.git-filter-repo
+    pkgs.git-agecrypt
   ];
   home-manager.sharedModules = [
     (homeArgs: let

@@ -7,7 +7,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./syncthing.nix
     ./boot.nix
     ./nvidia.nix
     # ../../modules/i3.nix
