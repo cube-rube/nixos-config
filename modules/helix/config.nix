@@ -21,7 +21,7 @@
     {
       name = "nix";
       auto-format = false;
-      formatter.command = "alejandra";
+      formatter.command = "nixfmt";
     }
     {
       name = "fasm";

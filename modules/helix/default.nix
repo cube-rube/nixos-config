@@ -18,6 +18,7 @@
     # nix
     pkgs.nixd
     pkgs.alejandra
+    pkgs.nixfmt-rfc-style
   ];
 
   home-manager.sharedModules = [{
