@@ -19,6 +19,7 @@ in {
     pkgs.bc
    
     pkgs.pciutils
+    pkgs.usbutils
     pkgs.fd
     pkgs.ripgrep
     pkgs.dust
