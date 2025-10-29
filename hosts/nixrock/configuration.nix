@@ -82,7 +82,7 @@
   users.users.cuberub = {
     isNormalUser = true;
     description = "cuberub";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout" ];
   };
 
   # Allow unfree packages
