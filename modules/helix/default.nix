@@ -19,6 +19,9 @@
     pkgs.nixd
     pkgs.alejandra
     pkgs.nixfmt-rfc-style
+
+    # odin
+    pkgs.ols
   ];
 
   home-manager.sharedModules = [{
