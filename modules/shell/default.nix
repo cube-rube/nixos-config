@@ -7,6 +7,7 @@
     ./starship.nix
     ./carapace.nix
     ./zoxide.nix
+    ./direnv.nix
     ./zsh.nix
   ];
 
