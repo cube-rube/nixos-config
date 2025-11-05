@@ -2,6 +2,12 @@
   description = "Cuberub's NixOS configuration";
 
   nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org/"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
     experimental-features = [
       "flakes"
       "nix-command"
@@ -9,12 +15,12 @@
     ];
     lazy-trees = true;
     show-trace = true;
+    trusted-users = [ "@wheel" "@build" ];
   };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nix.url = "github:DeterminateSystems/nix-src";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,7 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    zapret-discord-youtube = {
+      url = "github:kartavkun/zapret-discord-youtube";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -37,24 +46,20 @@
   outputs = {
     self,
     nixpkgs,
-    determinate,
-    chaotic,
+    nix,
     home-manager,
     agenix,
     zapret-discord-youtube,
     nix-index-database,
     ...
   } @ inputs: {
+
     nixosConfigurations.accord = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs =
-        inputs
-        // {
-          inherit inputs;
-        };
+      specialArgs = inputs // { inherit inputs; };
       modules = [
         ./hosts/accord/configuration.nix
-        determinate.nixosModules.default
+        { nixpkgs.overlays = [ nix.overlay.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -63,19 +68,16 @@
           home-manager.backupFileExtension = "bak";
         }
         nix-index-database.nixosModules.nix-index
-        {programs.nix-index-database.comma.enable = true;}
+        { programs.nix-index-database.comma.enable = true; }
       ];
     };
+
     nixosConfigurations.nixrock = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs =
-        inputs
-        // {
-          inherit inputs;
-        };
+      specialArgs = inputs // { inherit inputs; };
       modules = [
         ./hosts/nixrock/configuration.nix
-        determinate.nixosModules.default
+        { nixpkgs.overlays = [ nix.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -87,9 +89,7 @@
         agenix.nixosModules.default
 
         nix-index-database.nixosModules.nix-index
-        {programs.nix-index-database.comma.enable = true;}
-
-        chaotic.nixosModules.default
+        { programs.nix-index-database.comma.enable = true; }
 
         zapret-discord-youtube.nixosModules.default
         {
@@ -100,5 +100,6 @@
         }
       ];
     };
+
   };
 }
