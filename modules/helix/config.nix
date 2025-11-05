@@ -6,6 +6,10 @@
     make-language-server = {
       command = "make-language-server";
     };
+    flix-lsp = {
+      command = "flix";
+      args = [ "lsp" ];
+    };
   };
   
   language = [
@@ -27,8 +31,16 @@
       name = "fasm";
       scope = "source.fasm";
       file-types = ["fasm"];
-      comment-token = ";";
+      comment-tokens = ";";
       indent = { tab-width = 8; unit = "        "; };
+    }
+    {
+      name = "flix";
+      scope = "source.flix";
+      file-types = [ "flix" ];
+      comment-tokens = [ "//" "///" ];
+      indent = { tab-width = 4; unit = "    "; };
+      language-servers = [ "flix-lsp" ];
     }
   ];
   grammar = [
