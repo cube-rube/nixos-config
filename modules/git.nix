@@ -17,35 +17,17 @@
         };
       };
 
-      programs.delta = {
+      programs.difftastic = {
         enable = true;
-        enableGitIntegration = true;
-        options = {
-          navigate = true;
-          hyperlinks = true;
-          syntax-theme = "tokyo-night";
-
-
-          # Tokyo night theme
-          minus-style                   = "syntax \"#4a272f\" ";
-          minus-non-emph-style          = "syntax \"#4a272f\" ";
-          minus-emph-style              = "syntax \"#713137\" ";
-          minus-empty-line-marker-style = "syntax \"#4a272f\" ";
-          line-numbers-minus-style      = "\"#914c54\" ";
-          plus-style                    = "syntax \"#243e4a\" ";
-          plus-non-emph-style           = "syntax \"#243e4a\" ";
-          plus-emph-style               = "syntax \"#2c5a66\" ";
-          plus-empty-line-marker-style  = "syntax \"#243e4a\" ";
-          line-numbers-plus-style       = "\"#449dab\" ";
-          line-numbers-zero-style       = "\"#3b4261\" ";
-        };
+        git.enable = true;
       };
 
       programs.lazygit = {
         enable = true;
+        enableBashIntegration = false;
         settings = {
           git.pagers = [
-            { pager = "delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\""; }
+            { externalDiffCommand = "difft --color=always"; }
           ];
         };
       };
