@@ -3,6 +3,7 @@
     pkgs.gh
     pkgs.git-filter-repo
     pkgs.git-agecrypt
+    pkgs.git-crypt
   ];
   home-manager.sharedModules = [
     (homeArgs: let
