@@ -1,2 +1,0 @@
-hosts/nixrock/syncthing/devices.sct.nix filter=git-agecrypt diff=git-agecrypt
-hosts/nixrock/syncthing/folders.sct.nix filter=git-agecrypt diff=git-agecrypt
