@@ -5,6 +5,11 @@
       settings = {
         theme = "tokyonight_night";
         mouse-hide-while-typing = true;
+        font-feature = [
+          "-calt"
+          "-liga"
+          "-dlig"
+        ];
       };
       themes = {
         tokyonight_night = {
