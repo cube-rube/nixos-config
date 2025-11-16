@@ -8,7 +8,7 @@ default:
     @just --list
 
 [doc('rebuild the host
-    pass extra nix and nh args
+    pass extra nh and nix args
     by setting "extra_nh" and "extra_nix"')]
 rebuild HOST=hostname:
     nh os switch {{nh_flags + " --hostname " + HOST}} -- {{nix_flags}}
