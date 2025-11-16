@@ -27,6 +27,7 @@ in {
 
     # pgks.aseprite
     pkgs.krita
+    pkgs.mpv
     pkgs.qbittorrent-enhanced
     pkgs.obsidian
     pkgs.spotify
