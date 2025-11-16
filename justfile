@@ -11,7 +11,7 @@ default:
     pass extra nix and nh args
     by setting "extra_nh" and "extra_nix"')]
 rebuild HOST=hostname:
-    nh os switch {{nh_flags + " --hostname " + HOST}} -- --accept-flake-config
+    nh os switch {{nh_flags + " --hostname " + HOST}} -- {{nix_flags}}
 
 # update inputs
 up +INPUTS="":
