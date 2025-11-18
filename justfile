@@ -1,18 +1,22 @@
 hostname := `hostname`
-extra_nh := ""
-nh_flags := "-a " + extra_nh
-extra_nix := ""
-nix_flags := "--accept-flake-config " + extra_nix
+nh_flags := ""
+nix_flags := ""
     
 default:
     @just --list
 
 [doc('rebuild the host
-    pass extra nh and nix args
-    by setting "extra_nh" and "extra_nix"')]
+    pass extra nh and nix flags
+    by setting "nix_flags" and "nh_flags"')]
 rebuild HOST=hostname:
-    nh os switch {{nh_flags + " --hostname " + HOST}} -- {{nix_flags}}
+    nh os switch {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
 
+build-vm HOST=hostname:
+    nh os build-vm {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
+
+build HOST=hostname:
+    nh os build {{"--hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
+    
 # update inputs
 up +INPUTS="":
     nix flake update {{INPUTS}} --commit-lock-file

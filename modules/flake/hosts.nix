@@ -1,8 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-}:
+{ inputs, lib, config, ... }:
 let
   inherit (lib) filterAttrs hasPrefix mapAttrs' nameValuePair removePrefix;
   prefix = "hosts/";
