@@ -8,7 +8,7 @@ default:
 [doc('rebuild the host
     pass extra nh and nix flags
     by setting "nix_flags" and "nh_flags"')]
-rebuild HOST=hostname:
+switch HOST=hostname:
     nh os switch {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
 
 build-vm HOST=hostname:
