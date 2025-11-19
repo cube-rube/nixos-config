@@ -1,22 +1,24 @@
 {
-  flake.modules.nixos.cli = { pkgs, ... }: {
-    environment.systemPackages = [
-      pkgs.asciinema
-      pkgs.cowsay
-      pkgs.lolcat
-      pkgs.terminaltexteffects
-      pkgs.fastfetch
+  flake.aspects.cli = {
+    nixos = { pkgs, ... }: {
+      environment.systemPackages = [
+        pkgs.asciinema
+        pkgs.cowsay
+        pkgs.lolcat
+        pkgs.terminaltexteffects
+        pkgs.fastfetch
 
-      pkgs.tokei
-      pkgs.yazi
-      pkgs.bc
+        pkgs.tokei
+        pkgs.yazi
+        pkgs.bc
    
-      pkgs.pciutils
-      pkgs.usbutils
-      pkgs.fd
-      pkgs.ripgrep
-      pkgs.dust
-      pkgs.just
-    ];
+        pkgs.pciutils
+        pkgs.usbutils
+        pkgs.fd
+        pkgs.ripgrep
+        pkgs.dust
+        pkgs.just
+      ];
+    };
   };
 }
