@@ -2,7 +2,8 @@
   flake.aspects = { aspects, ... }: {
     "hosts/valon" = {
       includes = [
-        aspects.boot
+        aspects.system
+        aspects.desktop
       ];
       nixos = {
         imports = [
