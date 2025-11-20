@@ -9,13 +9,13 @@ default:
     pass extra nh and nix flags
     by setting "nix_args" and "nh_args" vars')]
 switch HOST=hostname:
-    nh os switch {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
+    nh os switch {{"-a --hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
 
 build-vm HOST=hostname:
-    nh os build-vm {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
+    nh os build-vm {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
 
 build HOST=hostname:
-    nh os build {{"--hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
+    nh os build {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
     
 # update inputs
 up +INPUTS="":
