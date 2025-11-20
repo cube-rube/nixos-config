@@ -6,9 +6,9 @@
       ];
       nixos = {
         imports = [
+          ./_config.nix
           ./_hw-config.nix 
         ];
-        system.stateVersion =  "25.11";
       };
     };
   };

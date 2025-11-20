@@ -1,13 +1,13 @@
 hostname := `hostname`
-nh_flags := ""
-nix_flags := ""
+nh_args := ""
+nix_args := ""
     
 default:
     @just --list
 
 [doc('rebuild the host
     pass extra nh and nix flags
-    by setting "nix_flags" and "nh_flags"')]
+    by setting "nix_args" and "nh_args" vars')]
 switch HOST=hostname:
     nh os switch {{"-a --hostname " + HOST + " " + nh_flags}} -- {{"--accept-flake-config " + nix_flags}}
 
