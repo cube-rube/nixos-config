@@ -3,7 +3,8 @@
     "hosts/valon" = {
       includes = [
         aspects.system
-        aspects.desktop
+        # aspects.desktop
+        aspects.printing
       ];
       nixos = {
         imports = [
