@@ -14,6 +14,9 @@ switch HOST=hostname:
 build-vm HOST=hostname:
     nh os build-vm {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
 
+run-vm HOST: (build-vm HOST)
+    ./result/bin/run-{{HOST}}-vm
+
 build HOST=hostname:
     nh os build {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
     
