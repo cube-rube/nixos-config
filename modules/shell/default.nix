@@ -8,7 +8,6 @@
     ./carapace.nix
     ./zoxide.nix
     ./direnv.nix
-    ./zsh.nix
   ];
 
   home-manager.sharedModules = [{
