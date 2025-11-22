@@ -1,12 +1,16 @@
-{
+{ lib, ... }: let
+  inherit (lib) listToAttrs map nameValuePair;
+in {
   flake.aspects.network = {
     nixos = {
       networking.networkmanager.enable = true;
     };
 
-    _.user = primaryUser: {
+    _.user = users: {
       nixos = {
-        users.users.${primaryUser.short}.extraGroups = [ "networkmanager" ];
+        users.users = users
+          |> map (u: nameValuePair u { extraGroups = [ "networkmanager" ]; })
+          |> listToAttrs;
       };
     };
   };

@@ -1,13 +1,8 @@
-{ config, ... }: {
-  flake.aspects.cuberub = rec {
-    meta = {
-      short = "cuberub";
-      name = "Cube Rub";
-    };
-    
+{
+  flake.aspects.cuberub = {
     nixos = {
       users.users.cuberub = {
-        description = meta.name;
+        description = "Cube Rub";
         isNormalUser = true;
         createHome = true;
         extraGroups = [

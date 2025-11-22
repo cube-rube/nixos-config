@@ -1,15 +1,14 @@
 { config, ...}: {
   flake.aspects = { aspects, ... }: {
-    "hosts/valon" = rec {
-      meta = {
-        primaryUser = config.flake.meta.cuberub;
-      };
+    "hosts/valon" = {
       includes = [
         aspects.system
+        (aspects.system._.user [ "cuberub" ])
+        aspects.dev
         # aspects.desktop
         aspects.printing
-        aspects.network
-        (aspects.network._.user meta.primaryUser)
+
+        aspects.cuberub
       ];
       nixos = {
         imports = [

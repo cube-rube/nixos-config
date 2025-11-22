@@ -26,4 +26,4 @@ up +INPUTS="":
 
 # open nix repl with configuration
 repl HOST=hostname:
-    nh os repl --hostname {{HOST}}
+    nh os repl --hostname {{HOST}} {{nh_args}}
