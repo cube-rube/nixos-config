@@ -37,6 +37,7 @@
       ../../modules/git.nix
       ../../modules/jujutsu.nix
       ../../modules/udev.nix
+      ../../modules/xdg.nix
     ];
 
   networking.hostName = "nixrock"; # Define your hostname.
