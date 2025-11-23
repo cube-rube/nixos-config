@@ -59,7 +59,7 @@
       specialArgs = inputs // { inherit inputs; };
       modules = [
         ./hosts/accord/configuration.nix
-        { nixpkgs.overlays = [ nix.overlay.default ]; }
+        { nixpkgs.overlays = [ nix.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

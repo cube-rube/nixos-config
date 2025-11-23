@@ -10,7 +10,6 @@
     ./boot.nix
     ./nvidia.nix
     # ../../modules/i3.nix
-    ../../modules/vpn
     ../../modules/network.nix
     ../../modules/social.nix
     ../../modules/keepass.nix
@@ -24,7 +23,6 @@
     ../../modules/ghostty.nix
     ../../modules/helix
     ../../modules/vscode.nix
-    ../../modules/ssh.nix
     ../../modules/shell
   ];
 
