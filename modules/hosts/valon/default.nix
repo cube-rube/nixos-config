@@ -14,9 +14,11 @@
         ];
         nixos = {
           imports = [
-            ./_config.nix
             ./_hw-config.nix
           ];
+
+          networking.hostname = "valon";
+          system.stateVersion = "25.05";
         };
       };
     };
