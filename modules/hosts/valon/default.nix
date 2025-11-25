@@ -1,20 +1,23 @@
-{ config, ...}: {
-  flake.aspects = { aspects, ... }: {
-    "hosts/valon" = {
-      includes = [
-        aspects.system
-        aspects.dev
-        # aspects.desktop
-        aspects.printing
+{
+  flake.aspects =
+    { aspects, ... }:
+    {
+      "hosts/valon" = {
+        includes = [
+          aspects.system
+          aspects.dev
+          # aspects.desktop
+          # aspects.nvidia
+          aspects.printing
 
-        aspects.cuberub
-      ];
-      nixos = {
-        imports = [
-          ./_config.nix
-          ./_hw-config.nix 
+          aspects.cuberub
         ];
+        nixos = {
+          imports = [
+            ./_config.nix
+            ./_hw-config.nix
+          ];
+        };
       };
     };
-  };
 }

@@ -1,5 +1,5 @@
 {
-  flake.aspects = { aspects, ... }: {
+  flake.aspects = {
     shell = {
       _.bash = {
         homeManager = {

@@ -10,7 +10,7 @@
           "plugdev"
           "dialout"
         ];
-      }; 
+      };
     };
   };
 }

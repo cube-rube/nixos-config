@@ -1,14 +1,16 @@
 {
   flake.aspects.git = {
-    
-    nixos = { pkgs, ... }: {
-      environment.systemPackages = [
-        pkgs.gh
-        pkgs.git-filter-repo
-        pkgs.git-agecrypt
-        pkgs.git-crypt
-      ];
-    };
+
+    nixos =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = [
+          pkgs.gh
+          pkgs.git-filter-repo
+          pkgs.git-agecrypt
+          pkgs.git-crypt
+        ];
+      };
 
     homeManager = {
       programs.git = {

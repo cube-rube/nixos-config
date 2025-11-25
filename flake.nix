@@ -15,7 +15,10 @@
     ];
     lazy-trees = true;
     show-trace = true;
-    trusted-users = [ "@wheel" "@build" ];
+    trusted-users = [
+      "@wheel"
+      "@build"
+    ];
   };
 
   inputs = {
@@ -24,6 +27,11 @@
     systems.url = "github:nix-systems/default";
     import-tree.url = "github:vic/import-tree";
     flake-aspects.url = "github:vic/flake-aspects";
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
