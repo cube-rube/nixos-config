@@ -10,8 +10,5 @@
         clean.extraArgs = "--keep 5 --keep-since 3d";
       };
     };
-    _.user = primaryUser: {
-      nixos.programs.nh.flake = "/home/${primaryUser}/Config";
-    };
   };
 }

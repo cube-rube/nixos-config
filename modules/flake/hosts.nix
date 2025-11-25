@@ -9,7 +9,8 @@ in
     |> mapAttrs' (name: module: nameValuePair
       (removePrefix prefix name)
       (inputs.nixpkgs.lib.nixosSystem {
-        modules = [ module ];
+        modules = [ module ] ++
+        [];
       })
     );
 }

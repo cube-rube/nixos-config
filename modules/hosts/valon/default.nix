@@ -3,7 +3,6 @@
     "hosts/valon" = {
       includes = [
         aspects.system
-        (aspects.system._.user [ "cuberub" ])
         aspects.dev
         # aspects.desktop
         aspects.printing

@@ -1,3 +1,5 @@
+export NH_FLAKE := "."
+
 hostname := `hostname`
 nh_args := ""
 nix_args := ""

@@ -8,11 +8,6 @@
         aspects.home-clean
         aspects.network
       ];
-      _.user = users: {
-        includes = [
-          (aspects.network._.user users)
-        ];
-      };
     };
   };
 }

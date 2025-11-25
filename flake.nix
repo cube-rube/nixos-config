@@ -25,8 +25,15 @@
     import-tree.url = "github:vic/import-tree";
     flake-aspects.url = "github:vic/flake-aspects";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zapret-discord-youtube = {
+      url = "github:kartavkun/zapret-discord-youtube";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

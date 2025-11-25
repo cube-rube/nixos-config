@@ -14,8 +14,8 @@
       programs.git = {
         enable = true;
         settings = {
-          # user.name = "Cube Rub";
-          # user.email = "111195474+cube-rube@users.noreply.github.com";
+          user.name = "Cube Rub";
+          user.email = "111195474+cube-rube@users.noreply.github.com";
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
           merge.conflictStyle = "zdiff3";
         };
@@ -37,12 +37,12 @@
       };
     };
 
-    _.user = { userName, userEmail }: {
-      homeManager.programs.git.settings.user = {
-        name = userName;
-        email = userEmail;
-      };
-    };
+    # _.user = { userName, userEmail }: {
+    #   homeManager.programs.git.settings.user = {
+    #     name = userName;
+    #     email = userEmail;
+    #   };
+    # };
 
   };
 }
