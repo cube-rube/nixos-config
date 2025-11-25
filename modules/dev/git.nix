@@ -20,6 +20,12 @@
           user.email = "111195474+cube-rube@users.noreply.github.com";
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
           merge.conflictStyle = "zdiff3";
+
+          gpg.format = "ssh";
+          user.signingkey = "~/.ssh/id_ed25519";
+          commit.gpgSign = true;
+          tag.gpgSign = true;
+          url."ssh://git@github.com/".insteadOf = "https://github.com/";
         };
       };
 

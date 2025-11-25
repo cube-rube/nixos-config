@@ -8,6 +8,8 @@
           aspects.shell._.bash
 
           aspects.git
+          aspects.bat
+          aspects.cli
         ];
       };
     };
