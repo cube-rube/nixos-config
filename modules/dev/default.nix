@@ -10,6 +10,7 @@
           aspects.git
           aspects.bat
           aspects.cli
+          aspects.jj
         ];
       };
     };

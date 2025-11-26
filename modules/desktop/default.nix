@@ -22,6 +22,12 @@
         includes = [
           aspects.plasma
           aspects.desktop-apps
+          aspects.ghostty
+          aspects.ides
+          aspects.keepassxc
+          aspects.browser
+          aspects.telegram
+          aspects.discord
         ];
       };
     };

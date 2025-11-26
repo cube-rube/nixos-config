@@ -9,6 +9,7 @@
           aspects.xdg
           aspects.home-clean
           aspects.network
+          aspects.docs
         ];
       };
     };

@@ -17,7 +17,7 @@
             ./_hw-config.nix
           ];
 
-          networking.hostname = "valon";
+          networking.hostName = "valon";
           system.stateVersion = "25.05";
         };
       };
