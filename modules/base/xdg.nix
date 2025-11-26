@@ -5,7 +5,7 @@
       {
         xdg = {
           enable = true;
-          extraConfig = {
+          userDirs.extraConfig = {
             XDG_DEVELOPMENT_DIR = "${config.home.homeDirectory}/Development";
           };
         };

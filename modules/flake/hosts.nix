@@ -22,7 +22,20 @@ in
       name: module:
       nameValuePair (removePrefix prefix name) (
         inputs.nixpkgs.lib.nixosSystem {
-          modules = [ module ] ++ [ ];
+          modules = [
+            module
+            inputs.home-manager.nixosModules.default
+          ]
+          ++ [
+            {
+              home-manager.sharedModules = [
+                config.flake.modules.homeManager.${name}
+              ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak";
+            }
+          ];
         }
       )
     );

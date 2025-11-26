@@ -11,6 +11,9 @@
           "dialout"
         ];
       };
+      home-manager.users.cuberub = {
+        home.stateVersion = "25.05";
+      };
     };
   };
 }

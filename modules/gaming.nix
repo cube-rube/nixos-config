@@ -7,13 +7,17 @@
           pkgs.prismlauncher
           pkgs.packwiz
           pkgs.ferium
-          pkgs.modrinth-app
+          # pkgs.modrinth-app
           pkgs.r2modman
           pkgs.lumafly
           pkgs.itch
           pkgs.the-powder-toy
         ];
         programs.steam.enable = true;
+
+        nixpkgs = {
+          config.allowUnfree = true;
+        };
       };
   };
 }

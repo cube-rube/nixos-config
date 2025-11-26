@@ -2,6 +2,8 @@
 {
   flake.aspects.nix = {
     nixos = {
+      nixpkgs.overlays = [ inputs.nix.overlays.default ];
+
       nix.settings = (import <| inputs.self + /flake.nix).nixConfig // {
         use-xdg-base-directories = true;
       };

@@ -24,6 +24,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nix = {
+      url = "github:DeterminateSystems/nix-src";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.flake-parts.follows = "flake-parts";
+    };
     systems.url = "github:nix-systems/default";
     import-tree.url = "github:vic/import-tree";
     flake-aspects.url = "github:vic/flake-aspects";
@@ -38,7 +43,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zapret-discord-youtube = {
+    zapret = {
       url = "github:kartavkun/zapret-discord-youtube";
       inputs.nixpkgs.follows = "nixpkgs";
     };

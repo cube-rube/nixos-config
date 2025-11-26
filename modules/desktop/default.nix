@@ -28,6 +28,7 @@
           aspects.browser
           aspects.telegram
           aspects.discord
+          aspects.wine
         ];
       };
     };

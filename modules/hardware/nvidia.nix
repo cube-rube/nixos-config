@@ -16,6 +16,10 @@
         hardware.graphics = {
           enable = true;
         };
+
+        nixpkgs = {
+          config.allowUnfree = true;
+        };
       };
   };
 }

@@ -6,11 +6,19 @@
         includes = [
           aspects.shell
           aspects.shell._.bash
+          aspects.shell._.nushell
 
           aspects.git
-          aspects.bat
           aspects.cli
           aspects.jj
+
+          aspects.aliases
+          aspects.bat
+          aspects.carapace
+          aspects.direnv
+          aspects.eza
+          aspects.starship
+          aspects.zoxide
         ];
       };
     };

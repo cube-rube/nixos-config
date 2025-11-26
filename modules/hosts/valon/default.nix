@@ -4,11 +4,14 @@
     {
       "hosts/valon" = {
         includes = [
-          aspects.system
+          aspects.base
+          aspects.desktop
           aspects.dev
-          # aspects.desktop
-          # aspects.nvidia
+          aspects.nvidia
           aspects.printing
+          aspects.gaming
+          aspects.zapret
+          aspects.wireguard
 
           aspects.cuberub
         ];
@@ -20,6 +23,7 @@
           networking.hostName = "valon";
           system.stateVersion = "25.05";
         };
+        homeManager = { };
       };
     };
 }

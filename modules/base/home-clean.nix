@@ -1,6 +1,6 @@
 {
   flake.aspects.home-clean = {
-    home =
+    homeManager =
       { config, ... }:
       {
         home.sessionVariables = {
