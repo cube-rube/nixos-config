@@ -85,6 +85,7 @@
     description = "cuberub";
     extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout" ];
   };
+  users.groups.plugdev.members = [ "cuberub" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

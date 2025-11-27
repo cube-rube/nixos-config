@@ -5,12 +5,6 @@ in {
     pkgs.nushell
   ];
 
-  # environment.systemPackages = [
-  #   pkgs.fish
-  #   pkgs.zsh
-  #   pkgs.inshellisense
-  # ];
-
   # programs.bash.interactiveShellInit = /* bash */ ''
   #     if ! [ "$TERM" = "dumb" ]; then
   #       exec nu
@@ -25,10 +19,5 @@ in {
           $env.config.hooks.command_not_found = source ${pkgs.nix-index}/etc/profile.d/command-not-found.nu
         '';
     };
-
-    # programs.carapace = {
-    #   enable = true;
-    #   enableNushellIntegration = true;
-    # };
   }];
 }

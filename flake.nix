@@ -41,6 +41,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    probe-rs-rules = {
+      url = "github:jneem/probe-rs-rules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
