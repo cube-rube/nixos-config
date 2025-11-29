@@ -1,5 +1,5 @@
 {
-  flake.aspects.home-clean = {
+  flake.aspects.base = {
     homeManager =
       { config, ... }:
       {

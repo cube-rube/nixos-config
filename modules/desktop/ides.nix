@@ -1,5 +1,5 @@
 {
-  flake.aspects.ides = {
+  flake.aspects.desktop = {
     nixos =
       { pkgs, ... }:
       {

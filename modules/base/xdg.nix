@@ -1,5 +1,5 @@
 {
-  flake.aspects.xdg = {
+  flake.aspects.base = {
     homeManager =
       { config, ... }:
       {

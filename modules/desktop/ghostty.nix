@@ -1,5 +1,5 @@
 {
-  flake.aspects.ghostty = {
+  flake.aspects.desktop = {
     homeManager = {
       programs.ghostty = {
         enable = true;

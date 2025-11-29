@@ -1,5 +1,5 @@
 {
-  flake.aspects.wine = {
+  flake.aspects.desktop = {
     nixos =
       { pkgs, ... }:
       {

@@ -1,5 +1,5 @@
 {
-  flake.aspects.telegram = {
+  flake.aspects.desktop = {
     nixos =
       { pkgs, ... }:
       {

@@ -1,5 +1,5 @@
 {
-  flake.aspects.nix-ld = {
+  flake.aspects.base = {
     nixos =
       { pkgs, ... }:
       {

@@ -1,5 +1,5 @@
 {
-  flake.aspects.network = {
+  flake.aspects.base = {
     nixos =
       { config, lib, ... }:
       let

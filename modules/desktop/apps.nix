@@ -1,5 +1,5 @@
 {
-  flake.aspects.desktop-apps = {
+  flake.aspects.desktop = {
     nixos =
       { pkgs, ... }:
       {

@@ -1,5 +1,5 @@
 {
-  flake.aspects.discord = {
+  flake.aspects.desktop = {
     homeManager = {
       programs.vesktop = {
         enable = true;

@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.aspects.nix = {
+  flake.aspects.base = {
     nixos = {
       nixpkgs.overlays = [ inputs.nix.overlays.default ];
 

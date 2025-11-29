@@ -8,6 +8,7 @@
           aspects.shell._.bash
           aspects.shell._.nushell
 
+          aspects.embedded-dev
           aspects.git
           aspects.cli
           aspects.jj

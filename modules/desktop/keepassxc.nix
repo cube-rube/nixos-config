@@ -1,5 +1,5 @@
 {
-  flake.aspects.keepassxc = {
+  flake.aspects.desktop = {
     homeManager = {
       programs.keepassxc.enable = true;
     };
