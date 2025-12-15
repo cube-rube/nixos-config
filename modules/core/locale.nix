@@ -1,5 +1,5 @@
 {
-  flake.aspects.base = {
+  flake.aspects.core = {
     nixos = {
       time.timeZone = "Europe/Moscow";
       i18n.defaultLocale = "ru_RU.UTF-8";
