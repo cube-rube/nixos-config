@@ -1,8 +1,15 @@
 {
-  flake.aspects.base = {
+  flake.aspects.core = {
     homeManager =
       { config, ... }:
       {
+        xdg = {
+          enable = true;
+          userDirs.extraConfig = {
+            XDG_DEVELOPMENT_DIR = "${config.home.homeDirectory}/Development";
+          };
+        };
+
         home.sessionVariables = {
           CARGO_HOME = "${config.xdg.dataHome}/cargo";
           CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
