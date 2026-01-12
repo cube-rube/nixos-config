@@ -1,4 +1,6 @@
 { self, pkgs, ... }: {
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   nix.settings = (import <| self + /flake.nix).nixConfig;
 
   programs.nh = {

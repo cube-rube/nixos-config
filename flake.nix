@@ -13,14 +13,13 @@
       "nix-command"
       "pipe-operators"
     ];
-    lazy-trees = true;
+    # lazy-trees = true;
     show-trace = true;
     trusted-users = [ "@wheel" "@build" ];
   };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix.url = "github:DeterminateSystems/nix-src";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -51,7 +50,6 @@
   outputs = {
     self,
     nixpkgs,
-    nix,
     home-manager,
     agenix,
     zapret-discord-youtube,
@@ -64,7 +62,6 @@
       specialArgs = inputs // { inherit inputs; };
       modules = [
         ./hosts/accord/configuration.nix
-        { nixpkgs.overlays = [ nix.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -82,7 +79,6 @@
       specialArgs = inputs // { inherit inputs; };
       modules = [
         ./hosts/nixrock/configuration.nix
-        { nixpkgs.overlays = [ nix.overlays.default ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
