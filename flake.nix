@@ -100,7 +100,7 @@
         {
           services.zapret-discord-youtube = {
             enable = true;
-            config = "general (FAKE_TLS_AUTO_ALT2)";
+            config = "general(ALT10)";
           };
         }
       ];
