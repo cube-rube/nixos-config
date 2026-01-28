@@ -2,7 +2,7 @@
 {
   environment.systemPackages = [
     pkgs.ayugram-desktop
-    pkgs.nheko
+    pkgs.element-desktop
   ];
   home-manager.sharedModules = [
     {
