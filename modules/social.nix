@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.ayugram-desktop
     pkgs.element-desktop
+    pkgs.obs-studio
   ];
   home-manager.sharedModules = [
     {
