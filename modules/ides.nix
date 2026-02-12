@@ -1,5 +1,5 @@
 { pkgs, ... }: {
   environment.systemPackages = [
-    pkgs.jetbrains.pycharm-community
+    pkgs.jetbrains.pycharm-oss
   ];
 }
