@@ -11,6 +11,7 @@
     in {
       programs.git = {
         enable = true;
+        lfs.enable = true;
         settings = {
           inherit (jjConfig) user;
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
