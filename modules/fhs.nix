@@ -20,19 +20,19 @@
       pkgs.systemd
 
       # My own additions
-      pkgs.xorg.libXcomposite
-      pkgs.xorg.libXtst
-      pkgs.xorg.libXrandr
-      pkgs.xorg.libXext
-      pkgs.xorg.libX11
-      pkgs.xorg.libXfixes
+      pkgs.libxcomposite
+      pkgs.libxtst
+      pkgs.libxrandr
+      pkgs.libxext
+      pkgs.libx11
+      pkgs.libxfixes
       pkgs.libGL
       pkgs.libva
       pkgs.pipewire
-      pkgs.xorg.libxcb
-      pkgs.xorg.libXdamage
-      pkgs.xorg.libxshmfence
-      pkgs.xorg.libXxf86vm
+      pkgs.libxcb
+      pkgs.libxdamage
+      pkgs.libxshmfence
+      pkgs.libxxf86vm
       pkgs.libelf
 
       # Required
@@ -52,13 +52,13 @@
       # glibc_multi.bin # Seems to cause issue in ARM
 
       # Without these it silently fails
-      pkgs.xorg.libXinerama
-      pkgs.xorg.libXcursor
-      pkgs.xorg.libXrender
-      pkgs.xorg.libXScrnSaver
-      pkgs.xorg.libXi
-      pkgs.xorg.libSM
-      pkgs.xorg.libICE
+      pkgs.libxinerama
+      pkgs.libxcursor
+      pkgs.libxrender
+      pkgs.libxscrnsaver
+      pkgs.libxi
+      pkgs.libsm
+      pkgs.libice
       pkgs.gnome2.GConf
       pkgs.nspr
       pkgs.nss
@@ -84,13 +84,13 @@
       # other issue: (Unity:377230): GLib-GIO-CRITICAL **: 21:09:04.706: g_dbus_proxy_call_sync_internal: assertion 'G_IS_DBUS_PROXY (proxy)' failed
 
       # Verified games requirements
-      pkgs.xorg.libXt
-      pkgs.xorg.libXmu
+      pkgs.libxt
+      pkgs.libxmu
       pkgs.libogg
       pkgs.libvorbis
       pkgs.SDL
       pkgs.SDL2_image
-      pkgs.glew110
+      pkgs.glew_1_10
       pkgs.libidn
       pkgs.tbb
 
@@ -119,7 +119,7 @@
       pkgs.libgcrypt
       pkgs.libvpx
       pkgs.librsvg
-      pkgs.xorg.libXft
+      pkgs.libxft
       pkgs.libvdpau
       # ...
       # Some more libraries that I needed to run programs
