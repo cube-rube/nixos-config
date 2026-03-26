@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.extraModulePackages = [
     config.boot.kernelPackages.akvcam
     config.boot.kernelPackages.v4l2loopback
