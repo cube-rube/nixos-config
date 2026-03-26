@@ -1,12 +1,22 @@
 { pkgs, ... }:
 let
-  tex = (pkgs.texlive.combine {
-      inherit (pkgs.texlive) scheme-full
-      dvisvgm dvipng # for preview and export as html
-      wrapfig amsmath ulem hyperref capt-of
-      xelatex-dev;
-  });
-in {
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-full
+        dvisvgm
+        dvipng # for preview and export as html
+        wrapfig
+        amsmath
+        ulem
+        hyperref
+        capt-of
+        xelatex-dev
+        ;
+    }
+  );
+in
+{
   environment.systemPackages = [
     pkgs.asciinema
     pkgs.cowsay
@@ -17,7 +27,7 @@ in {
     pkgs.tokei
     pkgs.yazi
     pkgs.bc
-   
+
     pkgs.pciutils
     pkgs.usbutils
     pkgs.fd
@@ -26,6 +36,7 @@ in {
     pkgs.just
 
     # pgks.aseprite
+    pkgs.webcamoid
     pkgs.krita
     pkgs.mpv
     pkgs.qbittorrent-enhanced
@@ -43,7 +54,7 @@ in {
     # C/C++
     pkgs.gcc
     pkgs.clang
-    pkgs.clang-tools    
+    pkgs.clang-tools
     pkgs.gnumake
 
     # Python
