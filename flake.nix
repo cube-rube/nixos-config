@@ -96,7 +96,7 @@
         {
           services.zapret-discord-youtube = {
             enable = true;
-            config = "general(ALT10)";
+            configName = "general(ALT10)";
           };
         }
       ];
