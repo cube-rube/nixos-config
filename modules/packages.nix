@@ -47,6 +47,7 @@ in
     pkgs.libreoffice-fresh
     tex
     pkgs.typst
+    pkgs.amneziawg-tools
 
     # asm
     pkgs.fasm
