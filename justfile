@@ -7,11 +7,17 @@ nix_args := ""
 default:
     @just --list
 
-[doc('rebuild the host
+[doc('rebuild the host configuration
     pass extra nh and nix flags
     by setting "nix_args" and "nh_args" vars')]
 switch HOST=hostname:
     nh os switch {{"-a --hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
+    
+[doc('test configuration
+    pass extra nh and nix flags
+    by setting "nix_args" and "nh_args" vars')]
+test HOST=hostname:
+    nh os test {{"-a --hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
 
 build-vm HOST=hostname:
     nh os build-vm {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
