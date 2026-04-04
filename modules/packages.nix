@@ -49,6 +49,9 @@ in
     pkgs.typst
     pkgs.amneziawg-tools
 
+    pkgs.gdb
+    pkgs.lldb
+    
     # asm
     pkgs.fasm
 
