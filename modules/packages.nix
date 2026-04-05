@@ -49,6 +49,7 @@ in
     tex
     pkgs.typst
     pkgs.amneziawg-tools
+    pkgs.easyeffects
 
     pkgs.gdb
     pkgs.lldb
