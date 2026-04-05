@@ -27,6 +27,7 @@ in
     pkgs.tokei
     pkgs.yazi
     pkgs.bc
+    pkgs.sioyek
 
     pkgs.pciutils
     pkgs.usbutils
