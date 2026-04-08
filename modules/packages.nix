@@ -51,6 +51,8 @@ in
     pkgs.amneziawg-tools
     pkgs.easyeffects
 
+    pkgs.cisco-packet-tracer_9
+
     pkgs.gdb
     pkgs.lldb
     
