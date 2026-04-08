@@ -45,11 +45,17 @@ in
     pkgs.spotify
     pkgs.kdePackages.kcalc
     pkgs.cables
-    pkgs.libreoffice-fresh
     tex
     pkgs.typst
     pkgs.amneziawg-tools
     pkgs.easyeffects
+
+    pkgs.libreoffice-qt-fresh
+    pkgs.hunspell
+    pkgs.hunspellDicts.en_US-large
+    pkgs.hunspellDicts.ru_RU
+    pkgs.hyphenDicts.en_US
+    pkgs.hyphenDicts.ru_RU
 
     pkgs.cisco-packet-tracer_9
 
