@@ -21,7 +21,7 @@
     pkgs.nixfmt
 
     # odin
-    pkgs.ols
+    # pkgs.ols
   ];
 
   home-manager.sharedModules = [{
