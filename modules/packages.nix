@@ -80,6 +80,12 @@ in
     pkgs.gleam
   ];
 
+  fonts.packages = [
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-color-emoji
+  ];
+
   # home-manager.sharedModules = [{
   #   programs.fastfetch.enable = true;
   #   programs.fd.enable = true;
