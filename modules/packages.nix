@@ -35,6 +35,7 @@ in
     pkgs.ripgrep
     pkgs.dust
     pkgs.just
+    pkgs.htop
 
     # pgks.aseprite
     pkgs.webcamoid
