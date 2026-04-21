@@ -36,6 +36,7 @@ in
     pkgs.dust
     pkgs.just
     pkgs.htop
+    pkgs.dex
 
     # pgks.aseprite
     pkgs.webcamoid
