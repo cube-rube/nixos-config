@@ -6,6 +6,12 @@
     v4l2loopback
     amneziawg
   ];
+  services.kmscon = {
+    enable = true;
+    hwRender = true;
+    useXkbConfig = true;
+    fonts = [ { name = "Jetbrains Mono Nerd"; package = pkgs.nerd-fonts.jetbrains-mono; } ];
+  };
   # boot.kernelModules = [
   #   "akvcam"
   #   "v4l2loopback"
