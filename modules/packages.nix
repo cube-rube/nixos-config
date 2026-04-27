@@ -51,6 +51,7 @@ in
     pkgs.typst
     pkgs.amneziawg-tools
     pkgs.easyeffects
+    pkgs.cpu-x
 
     pkgs.libreoffice-qt-fresh
     pkgs.hunspell
