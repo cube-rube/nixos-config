@@ -15,7 +15,7 @@
         settings = {
           inherit (jjConfig) user;
           init.defaultBranch = "main"; # maintaining the agenda is our top priority
-          merge.conflictStyle = "zdiff3";
+          merge.conflictStyle = "diff3";
         };
       };
 
