@@ -1,4 +1,5 @@
 { self, pkgs, ... }: {
+  environment.systemPackages = [ pkgs.npins ];
   nix.settings = (import <| self + /flake.nix).nixConfig;
 
   programs.nh = {
