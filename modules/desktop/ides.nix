@@ -1,11 +1,10 @@
 {
-  flake.aspects.desktop = {
-    nixos =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = [
-          pkgs.jetbrains.pycharm-community
-        ];
-      };
-  };
+  flake.modules.nixos.ides =
+
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        pkgs.jetbrains.pycharm-community
+      ];
+    };
 }

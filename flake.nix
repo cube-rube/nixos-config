@@ -13,34 +13,35 @@
       "nix-command"
       "pipe-operators"
     ];
-    lazy-trees = true;
+    # lazy-trees = true;
     show-trace = true;
     trusted-users = [
       "@wheel"
       "@build"
     ];
+    use-xdg-base-directories = true;
   };
 
   inputs = {
-    nixpkgs.url = "https://nixos.org/channels/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nix = {
-      url = "github:DeterminateSystems/nix-src";
-      # inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.flake-parts.follows = "flake-parts";
-    };
     systems.url = "github:nix-systems/default";
     import-tree.url = "github:vic/import-tree";
-    flake-aspects.url = "github:vic/flake-aspects";
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
     };
 
     zapret = {
@@ -60,6 +61,7 @@
       inputs.import-tree [
         ./modules
         ./hosts
+        ./flake
       ]
     );
 }

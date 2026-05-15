@@ -1,5 +1,5 @@
 {
-  flake.aspects.core.nixos =
+  flake.modules.nixos.docs =
     { pkgs, ... }:
     {
       documentation = {

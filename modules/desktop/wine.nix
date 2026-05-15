@@ -1,11 +1,9 @@
 {
-  flake.aspects.desktop = {
-    nixos =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = [
-          pkgs.bottles
-        ];
-      };
-  };
+  flake.modules.nixos.wine =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        pkgs.bottles
+      ];
+    };
 }

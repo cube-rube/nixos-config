@@ -1,5 +1,5 @@
 {
-  flake.aspects.printing.nixos = {
+  flake.modules.nixos.printing = {
     services.printing.enable = true;
   };
 }
