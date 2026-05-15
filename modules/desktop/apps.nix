@@ -1,18 +1,16 @@
 {
-  flake.aspects.desktop = {
-    nixos =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = [
-          pkgs.krita
-          pkgs.mpv
-          pkgs.qbittorrent-enhanced
-          pkgs.obsidian
-          pkgs.spotify
-          pkgs.kdePackages.kcalc
-          pkgs.cables
-          pkgs.libreoffice-fresh
-        ];
-      };
-  };
+  flake.modules.nixos.apps =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [
+        pkgs.krita
+        pkgs.mpv
+        pkgs.qbittorrent-enhanced
+        pkgs.obsidian
+        pkgs.spotify
+        pkgs.kdePackages.kcalc
+        pkgs.cables
+        pkgs.libreoffice-fresh
+      ];
+    };
 }

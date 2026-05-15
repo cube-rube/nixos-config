@@ -18,6 +18,12 @@ switch HOST=hostname:
     by setting "nix_args" and "nh_args" vars')]
 test HOST=hostname:
     nh os test {{"-a --hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
+    
+[doc('boot configuration
+    pass extra nh and nix flags
+    by setting "nix_args" and "nh_args" vars')]
+boot HOST=hostname:
+    nh os boot {{"-a --hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}
 
 build-vm HOST=hostname:
     nh os build-vm {{"--hostname " + HOST + " " + nh_args}} -- {{"--accept-flake-config " + nix_args}}

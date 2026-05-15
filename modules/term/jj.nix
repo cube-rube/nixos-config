@@ -1,5 +1,5 @@
 {
-  flake.aspects.jj = {
+  flake.aspects.dev = {
     homeManager = {
       programs.jujutsu = {
         enable = true;

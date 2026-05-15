@@ -1,5 +1,5 @@
 {
-  flake.aspects.desktop = {
+  flake.modules.nixos.browser = {
     nixos =
       { pkgs, ... }:
       {
