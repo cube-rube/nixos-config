@@ -4,7 +4,7 @@
     imports = [ inputs.zapret.nixosModules.default ];
     services.zapret-discord-youtube = {
       enable = true;
-      config = "general (FAKE_TLS_AUTO_ALT2)";
+      configName = "general (FAKE_TLS_AUTO_ALT2)";
     };
   };
 }

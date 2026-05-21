@@ -1,5 +1,5 @@
 {
-  flake.modules.hjem.dev =
+  flake.modules.hjem.carapace =
     { pkgs, lib, ... }:
     let
       inherit (lib.meta) getExe;
