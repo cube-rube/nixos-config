@@ -1,10 +1,11 @@
 {
   flake.modules.hjem.git =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     {
       packages = [
         pkgs.lazygit
         pkgs.mergiraf
+        pkgs.difftastic
       ];
 
       programs.git = {
@@ -22,6 +23,16 @@
 
           url."ssh://git@github.com/".insteadOf = "https://github.com/";
         };
+      };
+
+      xdg.config.files."lazygit/config.yml".generator = lib.generators.toYAML;
+      xdg.config.files."lazygit/config.yml".value = {
+        git.pagers = [
+          { externalDiffCommand = "difft --color=always"; }
+        ];
+      };
+      environment.shellAliases = {
+        lg = "lazygit";
       };
     };
 

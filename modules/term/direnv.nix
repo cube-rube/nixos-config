@@ -1,5 +1,5 @@
 {
-  flake.modules.hjem.dev = {
+  flake.modules.hjem.direnv = {
     programs.direnv = {
       enable = true;
       integrations.nushell.enable = true;
