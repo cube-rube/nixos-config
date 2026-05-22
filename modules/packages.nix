@@ -3,6 +3,10 @@
     { pkgs, ... }:
     {
       packages = [
+        pkgs.asciinema
+        pkgs.cowsay
+        pkgs.lolcat
+        pkgs.terminaltexteffects
         pkgs.fastfetch
 
         pkgs.pciutils
@@ -15,11 +19,27 @@
         pkgs.tree
         pkgs.tokei
         pkgs.uutils-coreutils-noprefix
-
-        pkgs.bat
+        pkgs.yazi
         pkgs.less
+
+        pkgs.dex
+
+        pkgs.just
+
+        pkgs.fasm
       ];
     };
+
+  flake.modules.hjem.packages-debug =
+    { pkgs, ... }:
+    {
+      packages = [
+        pkgs.gdb
+        pkgs.lldb
+        pkgs.rr
+      ];
+    };
+
   flake.modules.nixos.packages-cc =
     { pkgs, ... }:
     {
@@ -30,6 +50,7 @@
         pkgs.gnumake
       ];
     };
+
   flake.modules.hjem.packages-python =
     { config, pkgs, ... }:
     let
@@ -47,6 +68,7 @@
         pkgs.uv
       ];
     };
+
   flake.modules.hjem.packages-rust =
     { config, pkgs, ... }:
     {
@@ -57,6 +79,8 @@
 
       packages = [
         pkgs.cargo
+        pkgs.cargo-expand
+        pkgs.cargo-deny
         pkgs.clippy
         pkgs.rustfmt
         pkgs.rust-analyzer
