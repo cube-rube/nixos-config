@@ -19,6 +19,19 @@ in
         imports = singleton ./_hw-config.nix;
         networking.hostName = "valon";
 
+        users.users.cuberub = {
+          isNormalUser = true;
+          description = "cuberub";
+          extraGroups = [
+            "wheel"
+
+            # embedded
+            "plugdev"
+            "dialout"
+          ];
+        };
+        users.groups.plugdev.members = [ "cuberub" ];
+
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
       };

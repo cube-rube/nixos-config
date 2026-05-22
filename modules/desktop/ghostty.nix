@@ -10,6 +10,7 @@
           "-liga"
           "-dlig"
         ];
+        scrollback-limit = 500 * 1024 * 1024;
       };
       themes = {
         tokyonight_night = {

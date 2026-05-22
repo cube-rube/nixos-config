@@ -12,6 +12,9 @@
         pkgs.the-powder-toy
       ];
       programs.steam.enable = true;
+      programs.steam.extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
 
       nixpkgs = {
         config.allowUnfree = true;
