@@ -15,7 +15,7 @@
 
       environment.sessionVariables = {
         CARAPACE_BRIDGES = "inshellisense,carapace,zsh,fish,bash";
-        CARAPACE_LENIENT = 1;
+        CARAPACE_LENIENT = "1";
       };
 
       programs.nushell.extraConfig = /* nu */ ''
