@@ -16,7 +16,7 @@
       programs.nushell = {
         enable = true;
 
-        config = readFile ./config.nu;
+        extraConfig = readFile ./config.nu;
 
         aliases = {
           la = "ls -a";

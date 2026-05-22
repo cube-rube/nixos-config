@@ -31,6 +31,7 @@ in
           ];
         };
         users.groups.plugdev.members = [ "cuberub" ];
+        hjem.users.cuberub = { };
 
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";

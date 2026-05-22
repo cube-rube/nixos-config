@@ -4,19 +4,21 @@
     { lib, ... }:
     let
       inherit (lib.lists) singleton;
-      inherit (lib.modules) mkAliasOptionModule;
+      # inherit (lib.modules) mkAliasOptionModule;
     in
     {
       imports = [
         inputs.hjem.nixosModules.hjem
-        (mkAliasOptionModule [ "home" ] [ "hjem" ])
+        # (mkAliasOptionModule [ "home" ] [ "hjem" ])
       ];
 
-      home.extraModules = singleton inputs.hjem-rum.hjemModules.hjem-rum;
-      home.clobberByDefault = true;
+      hjem.extraModules = singleton inputs.hjem-rum.hjemModules.hjem-rum;
+      hjem.clobberByDefault = true;
+
+      hjem.users.root = { };
     };
 
-  flake.modules.home.home =
+  flake.modules.hjem.home =
     { lib, ... }:
     let
       inherit (lib.lists) singleton;

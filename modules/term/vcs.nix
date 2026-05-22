@@ -31,7 +31,8 @@
           { externalDiffCommand = "difft --color=always"; }
         ];
       };
-      environment.shellAliases = {
+
+      programs.nushell.aliases = {
         lg = "lazygit";
       };
     };
