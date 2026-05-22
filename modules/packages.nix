@@ -42,6 +42,7 @@ in
     # pgks.aseprite
     pkgs.webcamoid
     pkgs.krita
+    pkgs.blockbench
     pkgs.mpv
     pkgs.qbittorrent-enhanced
     pkgs.obsidian
@@ -65,7 +66,8 @@ in
 
     pkgs.gdb
     pkgs.lldb
-    
+    pkgs.rr
+
     # asm
     pkgs.fasm
 
@@ -74,6 +76,16 @@ in
     pkgs.clang
     pkgs.clang-tools
     pkgs.gnumake
+
+    # Rust
+    pkgs.cargo
+    pkgs.cargo-expand
+    pkgs.cargo-deny
+    
+    pkgs.clippy
+    pkgs.rustfmt
+    pkgs.rust-analyzer
+    pkgs.rustc
 
     # Python
     pkgs.python3
