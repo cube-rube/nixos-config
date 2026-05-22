@@ -8,9 +8,9 @@
       packages = [
         pkgs.carapace
         pkgs.carapace-bridge
-        # pkgs.inshellisense
-        # pkgs.zsh
-        # pkgs.fish
+        pkgs.inshellisense
+        pkgs.zsh
+        pkgs.fish
       ];
 
       environment.sessionVariables = {
