@@ -25,7 +25,7 @@
         };
       };
 
-      xdg.config.files."lazygit/config.yml".generator = lib.generators.toYAML;
+      xdg.config.files."lazygit/config.yml".generator = lib.generators.toYAML { };
       xdg.config.files."lazygit/config.yml".value = {
         git.pagers = [
           { externalDiffCommand = "difft --color=always"; }
@@ -39,7 +39,7 @@
   flake.modules.hjem.jujutsu =
     { pkgs, ... }:
     {
-      xdg.config.files."jj/config.toml".generator = pkgs.writers.writeTOML "jj-config.toml";
+      xdg.config.files."jj/config.toml".generator = (pkgs.formats.toml { }).generate "jj-config.toml";
       xdg.config.files."jj/config.toml".value = {
         user.name = "Cuberub";
         user.email = "111195474+cube-rube@users.noreply.github.com";
