@@ -4,6 +4,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = [
+        pkgs.nix-output-monitor
         pkgs.npins
       ];
 
