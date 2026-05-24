@@ -11,9 +11,8 @@
     experimental-features = [
       "flakes"
       "nix-command"
-      "pipe-operators"
+      "pipe-operator"
     ];
-    # lazy-trees = true;
     show-trace = true;
     trusted-users = [
       "@wheel"

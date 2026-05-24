@@ -7,7 +7,7 @@
         pkgs.npins
       ];
 
-      # nix.package = pkgs.lixPackageSets.stable.lix;
+      nix.package = pkgs.lixPackageSets.stable.lix;
 
       nix.settings = (import <| inputs.self + /flake.nix).nixConfig // {
         use-xdg-base-directories = true;
