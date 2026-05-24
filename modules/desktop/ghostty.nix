@@ -3,6 +3,16 @@
     programs.ghostty = {
       enable = true;
       settings = {
+        command = "nu";
+        shell-integration = "detect";
+        shell-integration-features = [
+          "cursor"
+          "sudo"
+          "title"
+          "ssh-env"
+          "ssh-terminfo"
+          "no-path"
+        ];
         theme = "tokyonight_night";
         mouse-hide-while-typing = true;
         font-feature = [
