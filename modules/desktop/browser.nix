@@ -21,8 +21,16 @@
     { lib, pkgs, ... }:
     let
       inherit (lib.lists) singleton;
+      inherit (lib.trivial) flip const;
+      inherit (lib.attrsets) genAttrs;
     in
     {
       packages = singleton pkgs.floorp-bin;
+
+      xdg.mime-apps.default-applications = flip genAttrs (const "floorp.desktop") [
+        "x-scheme-handler/http"
+        "x-scheme-handler/https"
+        "text/html"
+      ];
     };
 }
