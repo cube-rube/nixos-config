@@ -18,7 +18,7 @@ in
       ++ singleton {
         imports = singleton ./_hw-config.nix;
         networking.hostName = "valon";
-        
+
         hardware.facter = {
           enable = true;
           reportPath = ./facter.json;

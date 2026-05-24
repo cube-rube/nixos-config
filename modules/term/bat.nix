@@ -1,14 +1,4 @@
 {
-  # ???????????
-  # flake.modules.nixos.batman =
-  #   { pkgs, ... }:
-  #   {
-  #     environment.systemPackages = [
-  #       pkgs.bat
-  #       pkgs.bat-extras.batman
-  #     ];
-  #     environment.shellAliases.man = "batman";
-  #   };
   flake.modules.hjem.batman =
     { lib, pkgs, ... }:
     let

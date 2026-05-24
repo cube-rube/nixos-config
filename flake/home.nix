@@ -4,12 +4,10 @@
     { lib, ... }:
     let
       inherit (lib.lists) singleton;
-      # inherit (lib.modules) mkAliasOptionModule;
     in
     {
       imports = [
         inputs.hjem.nixosModules.hjem
-        # (mkAliasOptionModule [ "home" ] [ "hjem" ])
       ];
 
       hjem.extraModules = singleton inputs.hjem-rum.hjemModules.hjem-rum;
