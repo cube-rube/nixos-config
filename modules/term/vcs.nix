@@ -48,6 +48,7 @@
 
       packages = [
         pkgs.jujutsu
+        pkgs.jjui
       ];
     };
 }
