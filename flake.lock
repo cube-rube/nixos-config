@@ -156,6 +156,26 @@
         "type": "github"
       }
     },
+    "nixos-core": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779693145,
+        "narHash": "sha256-WzZopauS3/olUJ7rc+OiJCfplcUr1DMZdqJSkK038Yw=",
+        "owner": "feel-co",
+        "repo": "nixos-core",
+        "rev": "5c62672911ca593ca1bfd6b4135b5dc2c2ccf9ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "nixos-core",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1778869304,
@@ -211,6 +231,7 @@
         "hjem": "hjem",
         "hjem-rum": "hjem-rum",
         "import-tree": "import-tree",
+        "nixos-core": "nixos-core",
         "nixpkgs": "nixpkgs",
         "probe-rs-rules": "probe-rs-rules",
         "systems": "systems_2",

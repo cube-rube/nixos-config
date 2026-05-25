@@ -6,9 +6,7 @@
       inherit (lib.lists) singleton;
     in
     {
-      imports = [
-        inputs.hjem.nixosModules.hjem
-      ];
+      imports = singleton inputs.hjem.nixosModules.hjem;
 
       hjem.extraModules = singleton inputs.hjem-rum.hjemModules.hjem-rum;
       hjem.clobberByDefault = true;
