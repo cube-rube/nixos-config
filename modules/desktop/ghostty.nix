@@ -3,7 +3,7 @@
     programs.ghostty = {
       enable = true;
       settings = {
-        command = "nu";
+        # command = "nu";
         shell-integration = "detect";
         shell-integration-features = [
           "cursor"

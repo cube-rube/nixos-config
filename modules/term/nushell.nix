@@ -1,10 +1,21 @@
 {
   flake.modules.nixos.nushell =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
+    let
+      inherit (lib.meta) getExe;
+    in
     {
-      environment.shells = [
+      environment.shells = map getExe [
         pkgs.nushell
+        pkgs.dash
       ];
+
+      users.defaultUserShell = pkgs.dash;
+      environment.sessionVariables.ENV = pkgs.writeShellScript "dashInit" /* sh */ ''
+        if ! [ "$TERM" = "dumb" ]; then
+          exec ${getExe pkgs.nushell}
+        fi
+      '';
     };
 
   flake.modules.hjem.nushell =
