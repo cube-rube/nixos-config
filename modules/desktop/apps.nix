@@ -33,6 +33,8 @@
         pkgs.easyeffects
         pkgs.cpu-x
         pkgs.obs-studio
+        pkgs.jetbrains.idea-oss
+        pkgs.jetbrains.pycharm-oss
 
         pkgs.libreoffice-qt-fresh
         pkgs.hunspell
