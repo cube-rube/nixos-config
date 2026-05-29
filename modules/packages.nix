@@ -20,7 +20,6 @@
         pkgs.tokei
         pkgs.uutils-coreutils-noprefix
         pkgs.yazi
-        pkgs.less
 
         pkgs.dex
 
