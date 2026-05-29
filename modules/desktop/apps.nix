@@ -26,6 +26,7 @@
         pkgs.obsidian
         pkgs.spotify
         pkgs.kdePackages.kcalc
+        pkgs.kdePackages.kdenlive
         pkgs.cables
         tex
         pkgs.typst
