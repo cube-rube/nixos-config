@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.plasma =
-    { lib, pkgs, ... }:
+    { lib, ... }:
     let
       inherit (lib.lists) singleton;
       inherit (lib.meta) getExe;
@@ -13,7 +13,7 @@
       nixpkgs.overlays = singleton (
         final: prev: {
           kdePackages = prev.kdePackages.overrideScope (
-            kdeFinal: kdePrev: {
+            _kdeFinal: kdePrev: {
               plasma-workspace =
                 let
                   basePkg = kdePrev.plasma-workspace;
