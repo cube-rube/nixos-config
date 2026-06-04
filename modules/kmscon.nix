@@ -6,12 +6,10 @@
         enable = true;
         hwRender = true;
         useXkbConfig = true;
-        fonts = [
-          {
-            name = "Jetbrains Mono Nerd";
-            package = pkgs.nerd-fonts.jetbrains-mono;
-          }
-        ];
+        config = {
+          font-name = "JetBrainsMono Nerd Font Mono";
+        };
       };
+      fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
     };
 }
