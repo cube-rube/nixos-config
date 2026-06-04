@@ -143,6 +143,8 @@
         # Appimages need fuse, e.g. https://musescore.org/fr/download/musescore-x86_64.AppImage
         pkgs.fuse
         pkgs.e2fsprogs
+
+        pkgs.pipewire
       ];
     };
 }
