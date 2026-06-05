@@ -50,6 +50,6 @@
         };
       };
     };
+    xdg.config.files."xdg-terminals.list".text = "com.mitchellh.ghostty.desktop";
   };
-
 }
