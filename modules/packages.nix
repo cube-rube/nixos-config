@@ -9,6 +9,8 @@
         pkgs.terminaltexteffects
         pkgs.fastfetch
 
+        pkgs.unrar
+
         pkgs.pciutils
         pkgs.usbutils
         pkgs.fd
