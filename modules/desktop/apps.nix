@@ -21,6 +21,7 @@
         pkgs.webcamoid
         pkgs.krita
         pkgs.blockbench
+        pkgs.aseprite
         pkgs.mpv
         pkgs.qbittorrent-enhanced
         pkgs.obsidian
