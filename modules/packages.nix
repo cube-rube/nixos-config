@@ -13,6 +13,7 @@
 
         pkgs.pciutils
         pkgs.usbutils
+        pkgs.ffmpeg-full
         pkgs.fd
         pkgs.ripgrep
         pkgs.jc
@@ -22,6 +23,7 @@
         pkgs.tokei
         pkgs.uutils-coreutils-noprefix
         pkgs.yazi
+        pkgs.emacs
 
         pkgs.dex
 
