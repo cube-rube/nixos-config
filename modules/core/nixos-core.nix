@@ -8,6 +8,6 @@
     {
       imports = singleton inputs.nixos-core.nixosModules.default;
 
-      system.nixos-core.enable = true;
+      # system.nixos-core.enable = true;
     };
 }

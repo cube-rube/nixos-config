@@ -36,7 +36,7 @@ build HOST=hostname:
     
 # update inputs
 up +INPUTS="":
-    nix flake update {{INPUTS}} --commit-lock-file
+    nix flake update {{INPUTS}}
 
 # open nix repl with configuration
 repl HOST=hostname:

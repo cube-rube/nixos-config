@@ -35,7 +35,7 @@
     };
 
     nixos-core = {
-      url = "github:feel-co/nixos-core";
+      url = "github:manic-systems/nixos-core";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
