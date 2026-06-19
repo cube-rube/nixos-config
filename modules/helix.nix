@@ -87,7 +87,7 @@
     {
       packages = [
         pkgs.autotools-language-server
-        
+
         # python
         pkgs.ty
         pkgs.ruff
