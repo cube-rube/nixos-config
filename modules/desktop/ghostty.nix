@@ -21,6 +21,9 @@
           "-dlig"
         ];
         scrollback-limit = 500 * 1024 * 1024;
+
+        quit-after-last-window-closed = true;
+        quit-after-last-window-closed-delay = "5m";
       };
       themes = {
         tokyonight_night = {
