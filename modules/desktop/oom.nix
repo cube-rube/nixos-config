@@ -1,8 +1,13 @@
 {
   flake.modules.nixos.oom = {
-    systemd.oomd.enable = true;
+    systemd.oomd = {
+      enable = true;
+      enableRootSlice = true;
+      enableUserSlices = true;
+    };
     systemd.oomd.settings.OOM = {
-      DefaultMemoryPressureLimit = "75%";
+      DefaultMemoryPressureLimit = "80%";
+      DefaultMemoryPressureDurationSec = "20s";
     };
   };
 }
