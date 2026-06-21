@@ -30,6 +30,8 @@
         pkgs.just
 
         pkgs.fasm
+
+        pkgs.devenv
       ];
     };
 
