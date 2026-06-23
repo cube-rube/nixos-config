@@ -35,6 +35,14 @@
         pkgs.easyeffects
         pkgs.cpu-x
         pkgs.obs-studio
+        (pkgs.orca-c.overrideAttrs (old: {
+          version = "unstable-2025-04-15";
+          src = pkgs.fetchgit {
+            url = "https://git.sr.ht/~rabbits/orca";
+            rev = "9ec55aa88d5a3abab58ef229aeecaaccaab8f517";
+            sha256 = "sha256-HC6V1w/KN1Zerl2ferVQcbx11V4+nRhCi7Z/EV/4Osk=";
+          };
+        }))
 
         pkgs.jetbrains.idea-oss
         pkgs.jetbrains.pycharm-oss
