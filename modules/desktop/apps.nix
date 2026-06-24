@@ -35,7 +35,7 @@
         pkgs.easyeffects
         pkgs.cpu-x
         pkgs.obs-studio
-        (pkgs.orca-c.overrideAttrs (old: {
+        (pkgs.orca-c.overrideAttrs (_old: {
           version = "unstable-2025-04-15";
           src = pkgs.fetchgit {
             url = "https://git.sr.ht/~rabbits/orca";
