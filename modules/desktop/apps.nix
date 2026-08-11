@@ -44,8 +44,8 @@
           };
         }))
 
-        pkgs.jetbrains.idea-oss
-        pkgs.jetbrains.pycharm-oss
+        pkgs.jetbrains.idea
+        pkgs.jetbrains.pycharm
         pkgs.zed-editor
 
         pkgs.libreoffice-qt-fresh
