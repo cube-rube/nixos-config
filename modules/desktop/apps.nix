@@ -2,19 +2,20 @@
   flake.modules.nixos.apps =
     { pkgs, ... }:
     let
-      tex = pkgs.texlive.combine {
-        inherit (pkgs.texlive)
-          scheme-full
-          dvisvgm
-          dvipng # for preview and export as html
-          wrapfig
-          amsmath
-          ulem
-          hyperref
-          capt-of
-          xelatex-dev
-          ;
-      };
+      tex = (
+        pkgs.texliveMedium.withPackages (
+          ps: with ps; [
+            dvisvgm
+            dvipng
+            wrapfig
+            amsmath
+            ulem
+            hyperref
+            capt-of
+            xelatex-dev
+          ]
+        )
+      );
     in
     {
       environment.systemPackages = [
@@ -28,6 +29,7 @@
         pkgs.spotify
         pkgs.kdePackages.kcalc
         pkgs.kdePackages.kdenlive
+        pkgs.haruna
         pkgs.cables
         tex
         pkgs.typst
@@ -48,7 +50,7 @@
         pkgs.jetbrains.pycharm
         pkgs.zed-editor
 
-        pkgs.libreoffice-qt-fresh
+        pkgs.libreoffice-qt-stable
         pkgs.hunspell
         pkgs.hunspellDicts.en_US-large
         pkgs.hunspellDicts.ru_RU
@@ -59,6 +61,9 @@
         pkgs.noto-fonts
         pkgs.noto-fonts-cjk-sans
         pkgs.noto-fonts-color-emoji
+        pkgs.liberation_ttf
+        pkgs.nerd-fonts.fira-code
       ];
+      fonts.enableDefaultPackages = true;
     };
 }

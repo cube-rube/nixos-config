@@ -25,12 +25,12 @@
         };
       };
 
-      xdg.config.files."lazygit/config.yml".generator = lib.generators.toYAML { };
-      xdg.config.files."lazygit/config.yml".value = {
-        git.pagers = [
-          { externalDiffCommand = "difft --color=always"; }
-        ];
-      };
+      # xdg.config.files."lazygit/config.yml".generator = lib.generators.toYAML { };
+      # xdg.config.files."lazygit/config.yml".value = {
+      #   git.diffRenderers = [
+      #     { command = "difft --color=always"; }
+      #   ];
+      # };
 
       programs.nushell.aliases = {
         lg = "lazygit";

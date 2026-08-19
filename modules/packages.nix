@@ -32,6 +32,8 @@
         pkgs.fasm
 
         pkgs.devenv
+
+        pkgs.dosbox
       ];
     };
 

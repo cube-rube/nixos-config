@@ -30,7 +30,6 @@
         pkgs.libxfixes
         pkgs.libGL
         pkgs.libva
-        pkgs.pipewire
         pkgs.libxcb
         pkgs.libxdamage
         pkgs.libxshmfence
@@ -61,7 +60,6 @@
         pkgs.libxi
         pkgs.libsm
         pkgs.libice
-        pkgs.gnome2.GConf
         pkgs.nspr
         pkgs.nss
         pkgs.cups
@@ -113,9 +111,6 @@
         pkgs.SDL_mixer
         pkgs.SDL2_ttf
         pkgs.SDL2_mixer
-        pkgs.libappindicator-gtk2
-        pkgs.libdbusmenu-gtk2
-        pkgs.libindicator-gtk2
         pkgs.libcaca
         pkgs.libcanberra
         pkgs.libgcrypt
@@ -143,8 +138,6 @@
         # Appimages need fuse, e.g. https://musescore.org/fr/download/musescore-x86_64.AppImage
         pkgs.fuse
         pkgs.e2fsprogs
-
-        pkgs.pipewire
       ];
     };
 }

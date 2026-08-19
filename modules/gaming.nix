@@ -1,8 +1,9 @@
-{
+{ self, ... }: {
   flake.modules.nixos.gaming =
     { pkgs, ... }:
     {
       environment.systemPackages = [
+        self.packages.${pkgs.stdenv.hostPlatform.system}.packweave
         pkgs.prismlauncher
         pkgs.packwiz
         pkgs.ferium

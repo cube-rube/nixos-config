@@ -1,5 +1,5 @@
-{
-  flake.modules.nixos.browser =
+{ inputs, ... }: {
+  flake.modules.nixos.browsers =
     { pkgs, ... }:
     {
       environment.systemPackages = [
@@ -21,13 +21,23 @@
     { lib, pkgs, ... }:
     let
       inherit (lib.lists) singleton;
-      inherit (lib.trivial) flip const;
-      inherit (lib.attrsets) genAttrs;
     in
     {
       packages = singleton pkgs.floorp-bin;
 
-      xdg.mime-apps.default-applications = flip genAttrs (const "floorp.desktop") [
+    };
+
+  flake.modules.hjem.helium =
+    { lib, osConfig, ... }:
+    let
+      inherit (lib.lists) singleton;
+      inherit (lib.trivial) flip const;
+      inherit (lib.attrsets) genAttrs;
+    in
+    {
+      packages = singleton inputs.helium.packages.${osConfig.nixpkgs.hostPlatform.system}.default;
+
+      xdg.mime-apps.default-applications = flip genAttrs (const "helium.desktop") [
         "x-scheme-handler/http"
         "x-scheme-handler/https"
         "text/html"

@@ -4,7 +4,7 @@
     imports = [ inputs.zapret.nixosModules.default ];
     services.zapret-discord-youtube = {
       enable = true;
-      configName = "general(ALT10)";
+      configName = "general (ALT12)";
     };
   };
 }

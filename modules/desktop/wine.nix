@@ -28,6 +28,7 @@
             );
         })
       ];
+      programs.appimage.enable = true;
     };
 
 }
