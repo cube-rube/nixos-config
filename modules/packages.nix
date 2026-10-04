@@ -51,7 +51,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = [
-        pkgs.gcc
+        # pkgs.gcc
         pkgs.clang
         pkgs.clang-tools
         pkgs.gnumake
