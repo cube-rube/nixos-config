@@ -19,6 +19,9 @@ in
         imports = singleton ./_hw-config.nix;
         networking.hostName = "valon";
 
+        boot.zswap.enable = true;
+        boot.kernel.sysctl."vm.swappiness" = 100;
+
         hardware.facter = {
           enable = true;
           reportPath = ./facter.json;
