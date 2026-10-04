@@ -1,10 +1,6 @@
 {
   flake.modules.nixos.plasma =
     { lib, ... }:
-    let
-      inherit (lib.lists) singleton;
-      inherit (lib.meta) getExe;
-    in
     {
       # services.displayManager.plasma-login-manager.enable = true;
       services.displayManager.sddm.enable = true;
@@ -12,50 +8,51 @@
 
       programs.kdeconnect.enable = true;
 
-      nixpkgs.overlays = singleton (
-        final: prev: {
-          kdePackages = prev.kdePackages.overrideScope (
-            _kdeFinal: kdePrev: {
-              plasma-workspace =
-                let
-                  basePkg = kdePrev.plasma-workspace;
-                  xdgdataPkg = final.stdenv.mkDerivation {
-                    name = "${basePkg.name}-xdgdata";
-                    buildInputs = [ basePkg ];
-                    dontUnpack = true;
-                    dontFixup = true;
-                    dontWrapQtApps = true;
-                    installPhase = ''
-                      mkdir -p $out/share
-                      ( IFS=:
-                        for DIR in $XDG_DATA_DIRS; do
-                          if [[ -d "$DIR" ]]; then
-                            ${getExe prev.lndir} -silent "$DIR" $out
-                          fi
-                        done
-                      )
-                    '';
-                  };
-                  derivedPkg = basePkg.overrideAttrs {
-                    preFixup = ''
-                      for index in "''${!qtWrapperArgs[@]}"; do
-                        if [[ ''${qtWrapperArgs[$((index+0))]} == "--prefix" ]] && [[ ''${qtWrapperArgs[$((index+1))]} == "XDG_DATA_DIRS" ]]; then
-                          unset -v "qtWrapperArgs[$((index+0))]"
-                          unset -v "qtWrapperArgs[$((index+1))]"
-                          unset -v "qtWrapperArgs[$((index+2))]"
-                          unset -v "qtWrapperArgs[$((index+3))]"
-                        fi
-                      done
-                      qtWrapperArgs=("''${qtWrapperArgs[@]}")
-                      qtWrapperArgs+=(--prefix XDG_DATA_DIRS : "${xdgdataPkg}/share")
-                      qtWrapperArgs+=(--prefix XDG_DATA_DIRS : "$out/share")
-                    '';
-                  };
-                in
-                derivedPkg;
-            }
-          );
-        }
-      );
+      # TODO: switch from ts to niri
+      # nixpkgs.overlays = singleton (
+      #   final: prev: {
+      #     kdePackages = prev.kdePackages.overrideScope (
+      #       _kdeFinal: kdePrev: {
+      #         plasma-workspace =
+      #           let
+      #             basePkg = kdePrev.plasma-workspace;
+      #             xdgdataPkg = final.stdenv.mkDerivation {
+      #               name = "${basePkg.name}-xdgdata";
+      #               buildInputs = [ basePkg ];
+      #               dontUnpack = true;
+      #               dontFixup = true;
+      #               dontWrapQtApps = true;
+      #               installPhase = ''
+      #                 mkdir -p $out/share
+      #                 ( IFS=:
+      #                   for DIR in $XDG_DATA_DIRS; do
+      #                     if [[ -d "$DIR" ]]; then
+      #                       ${getExe prev.lndir} -silent "$DIR" $out
+      #                     fi
+      #                   done
+      #                 )
+      #               '';
+      #             };
+      #             derivedPkg = basePkg.overrideAttrs {
+      #               preFixup = ''
+      #                 for index in "''${!qtWrapperArgs[@]}"; do
+      #                   if [[ ''${qtWrapperArgs[$((index+0))]} == "--prefix" ]] && [[ ''${qtWrapperArgs[$((index+1))]} == "XDG_DATA_DIRS" ]]; then
+      #                     unset -v "qtWrapperArgs[$((index+0))]"
+      #                     unset -v "qtWrapperArgs[$((index+1))]"
+      #                     unset -v "qtWrapperArgs[$((index+2))]"
+      #                     unset -v "qtWrapperArgs[$((index+3))]"
+      #                   fi
+      #                 done
+      #                 qtWrapperArgs=("''${qtWrapperArgs[@]}")
+      #                 qtWrapperArgs+=(--prefix XDG_DATA_DIRS : "${xdgdataPkg}/share")
+      #                 qtWrapperArgs+=(--prefix XDG_DATA_DIRS : "$out/share")
+      #               '';
+      #             };
+      #           in
+      #           derivedPkg;
+      #       }
+      #     );
+      #   }
+      # );
     };
 }
