@@ -2,8 +2,7 @@
   flake.modules.nixos.apps =
     { pkgs, ... }:
     let
-      tex = (
-        pkgs.texliveMedium.withPackages (
+      tex = pkgs.texliveMedium.withPackages (
           ps: with ps; [
             dvisvgm
             dvipng
@@ -14,8 +13,7 @@
             capt-of
             xelatex-dev
           ]
-        )
-      );
+        );
     in
     {
       environment.systemPackages = [

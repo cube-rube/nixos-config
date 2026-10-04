@@ -1,6 +1,6 @@
 {
   flake.modules.hjem.git =
-    { lib, pkgs, ... }:
+    { pkgs, ... }:
     {
       packages = [
         pkgs.lazygit
