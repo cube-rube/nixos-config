@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.network = config.flake.modules.nixos.networkmanager;
   flake.modules.nixos.networkmanager =
     { config, lib, ... }:
     let

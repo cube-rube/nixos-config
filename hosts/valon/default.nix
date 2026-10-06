@@ -1,26 +1,27 @@
 {
   config,
-  lib,
   inputs,
   ...
 }:
 let
-  inherit (lib.attrsets) attrValues;
-  inherit (lib.lists) singleton;
+  flakeModules = config.flake.modules;
 in
 {
   flake.nixosConfigurations.valon = inputs.nixpkgs.lib.nixosSystem {
-    modules =
-      attrValues config.flake.modules.nixos
-      ++ singleton {
-        hjem.extraModules = attrValues config.flake.modules.hjem;
-      }
-      ++ singleton {
-        imports = singleton ./_hw-config.nix;
+    modules = [
+      flakeModules.nixos.workstation
+      {
+        imports = [
+          ./_hw-config.nix
+        ];
         networking.hostName = "valon";
 
         boot.zswap.enable = true;
         boot.kernel.sysctl."vm.swappiness" = 100;
+
+        environment.sessionVariables = {
+          KWIN_SCREENCAST_NO_DMABUF = "1";
+        };
 
         hardware.facter = {
           enable = true;
@@ -32,7 +33,6 @@ in
           description = "cuberub";
           extraGroups = [
             "wheel"
-
             # embedded
             "plugdev"
             "dialout"
@@ -43,7 +43,7 @@ in
 
         nixpkgs.hostPlatform = "x86_64-linux";
         system.stateVersion = "25.05";
-      };
-
+      }
+    ];
   };
 }

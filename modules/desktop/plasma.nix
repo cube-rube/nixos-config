@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.desktop = config.flake.modules.nixos.plasma;
   flake.modules.nixos.plasma =
     { pkgs, ... }:
     {

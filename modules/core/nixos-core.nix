@@ -1,5 +1,6 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
+  flake.modules.nixos.core = config.flake.modules.nixos.nixos-core;
   flake.modules.nixos.nixos-core =
     { lib, ... }:
     let

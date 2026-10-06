@@ -1,4 +1,8 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.term.imports = [
+    config.flake.modules.hjem.helix
+    config.flake.modules.hjem.lsps
+  ];
   flake.modules.hjem.helix = {
     environment.sessionVariables.EDITOR = "hx";
 

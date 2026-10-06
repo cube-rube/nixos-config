@@ -1,4 +1,6 @@
+{ config, ... }:
 {
+  flake.modules.nixos.core = config.flake.modules.nixos.locale;
   flake.modules.nixos.locale = {
     time.timeZone = "Europe/Moscow";
     i18n.defaultLocale = "ru_RU.UTF-8";

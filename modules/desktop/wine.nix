@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.desktop = config.flake.modules.nixos.wine;
   flake.modules.nixos.wine =
     { pkgs, ... }:
     {
@@ -30,5 +31,4 @@
       ];
       programs.appimage.enable = true;
     };
-
 }

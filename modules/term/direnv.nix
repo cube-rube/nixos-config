@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.term = config.flake.modules.hjem.direnv;
   flake.modules.hjem.direnv = {
     programs.direnv = {
       enable = true;

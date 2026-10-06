@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.term = config.flake.modules.nixos.nushell;
   flake.modules.nixos.nushell =
     { lib, pkgs, ... }:
     let
@@ -18,6 +19,7 @@
       '';
     };
 
+  flake.modules.hjem.term = config.flake.modules.hjem.nushell;
   flake.modules.hjem.nushell =
     { lib, ... }:
     let

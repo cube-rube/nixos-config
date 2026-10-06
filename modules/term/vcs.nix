@@ -1,4 +1,9 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.term.imports = [
+    config.flake.modules.hjem.git
+    config.flake.modules.hjem.jujutsu
+  ];
+
   flake.modules.hjem.git =
     { pkgs, ... }:
     {

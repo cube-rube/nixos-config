@@ -1,6 +1,9 @@
 {
   flake.modules.nixos.audio = { pkgs, ... }: {
-    environment.systemPackages = [ pkgs.pavucontrol pkgs.qpwgraph ];
+    environment.systemPackages = [
+      pkgs.pavucontrol
+      pkgs.qpwgraph
+    ];
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

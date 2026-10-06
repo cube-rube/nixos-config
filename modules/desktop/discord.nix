@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.desktop = config.flake.modules.hjem.discord;
   flake.modules.hjem.discord =
     {
       lib,

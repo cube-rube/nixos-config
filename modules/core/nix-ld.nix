@@ -1,4 +1,6 @@
+{ config, ... }:
 {
+  flake.modules.nixos.core = config.flake.modules.nixos.nix-ld;
   flake.modules.nixos.nix-ld =
     { pkgs, ... }:
     {

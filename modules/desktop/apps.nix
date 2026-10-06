@@ -1,19 +1,20 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.desktop = config.flake.modules.nixos.apps;
   flake.modules.nixos.apps =
     { pkgs, ... }:
     let
       tex = pkgs.texliveMedium.withPackages (
-          ps: with ps; [
-            dvisvgm
-            dvipng
-            wrapfig
-            amsmath
-            ulem
-            hyperref
-            capt-of
-            xelatex-dev
-          ]
-        );
+        ps: with ps; [
+          dvisvgm
+          dvipng
+          wrapfig
+          amsmath
+          ulem
+          hyperref
+          capt-of
+          xelatex-dev
+        ]
+      );
     in
     {
       environment.systemPackages = [

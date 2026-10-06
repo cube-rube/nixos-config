@@ -1,5 +1,6 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
+  flake.modules.nixos.core = config.flake.modules.nixos.kernel;
   flake.modules.nixos.kernel =
     { pkgs, ... }:
     {

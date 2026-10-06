@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.network = config.flake.modules.nixos.certs;
   flake.modules.nixos.certs = { pkgs, ... }: {
     # вирусы бесплатно скачать без регистрации 2026
     security.pki.certificateFiles = [

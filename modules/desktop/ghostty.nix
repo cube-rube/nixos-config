@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.desktop = config.flake.modules.hjem.ghostty;
   flake.modules.hjem.ghostty = {
     programs.ghostty = {
       enable = true;

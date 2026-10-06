@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.network = config.flake.modules.nixos.wireguard;
   flake.modules.nixos.wireguard =
     {
       pkgs,

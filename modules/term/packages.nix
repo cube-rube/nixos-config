@@ -1,4 +1,12 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.term.imports = [
+    config.flake.modules.hjem.packages-shell-utils
+    config.flake.modules.hjem.packages-debug
+    config.flake.modules.hjem.packages-cc
+    config.flake.modules.hjem.packages-python
+    config.flake.modules.hjem.packages-rust
+  ];
+
   flake.modules.hjem.packages-shell-utils =
     { pkgs, ... }:
     {
@@ -48,11 +56,10 @@
       ];
     };
 
-  flake.modules.nixos.packages-cc =
+  flake.modules.hjem.packages-cc =
     { pkgs, ... }:
     {
-      environment.systemPackages = [
-        # pkgs.gcc
+      packages = [
         pkgs.clang
         pkgs.clang-tools
         pkgs.gnumake

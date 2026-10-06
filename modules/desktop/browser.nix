@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ config, inputs, ... }: {
+  flake.modules.nixos.desktop = config.flake.modules.nixos.browsers;
   flake.modules.nixos.browsers =
     { pkgs, ... }:
     {
@@ -8,14 +9,10 @@
       ];
     };
 
-  flake.modules.home-manager =
-    { pkgs, ... }:
-    {
-      programs.floorp = {
-        enable = true;
-        nativeMessagingHosts = [ pkgs.keepassxc ];
-      };
-    };
+  flake.modules.hjem.desktop.imports = [
+    config.flake.modules.hjem.floorp
+    config.flake.modules.hjem.helium
+  ];
 
   flake.modules.hjem.floorp =
     { lib, pkgs, ... }:
@@ -24,7 +21,6 @@
     in
     {
       packages = singleton pkgs.floorp-bin;
-
     };
 
   flake.modules.hjem.helium =

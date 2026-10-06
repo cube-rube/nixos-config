@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.hjem.term = config.flake.modules.hjem.batman;
   flake.modules.hjem.batman =
     { lib, pkgs, ... }:
     let

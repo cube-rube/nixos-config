@@ -1,4 +1,5 @@
-{
+{ config, ... }: {
+  flake.modules.nixos.core = config.flake.modules.nixos.docs;
   flake.modules.nixos.docs =
     { pkgs, ... }:
     {

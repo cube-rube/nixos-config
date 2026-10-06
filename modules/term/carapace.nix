@@ -1,4 +1,6 @@
-{
+{ config, ... }: {
+  # TODO: replace
+  flake.modules.hjem.term = config.flake.modules.hjem.carapace;
   flake.modules.hjem.carapace =
     { pkgs, lib, ... }:
     let
