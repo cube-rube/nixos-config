@@ -10,6 +10,7 @@
         pkgs.fastfetch
 
         pkgs.unrar
+        pkgs.wl-clipboard
 
         pkgs.pciutils
         pkgs.usbutils
